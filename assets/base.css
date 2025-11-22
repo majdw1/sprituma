@@ -1,1 +1,394 @@
-body{background:black;color:white;}
+:root {
+  --spiritum-bg: #02030a;
+  --spiritum-bg-alt: #050516;
+  --spiritum-grid: rgba(148, 163, 184, 0.16);
+  --spiritum-purple: #6d28d9;
+  --spiritum-blue: #38bdf8;
+  --spiritum-text: #e5e7eb;
+  --spiritum-muted: #9ca3af;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body.spiritum-body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(56, 189, 248, 0.16), transparent 55%),
+    radial-gradient(circle at 90% 100%, rgba(109, 40, 217, 0.16), transparent 55%),
+    radial-gradient(circle at 50% 120%, rgba(15, 23, 42, 0.9), rgba(2, 6, 23, 1));
+  color: var(--spiritum-text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.spiritum-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: blur(18px);
+  background: linear-gradient(to bottom, rgba(2,6,23,0.96), rgba(2,6,23,0.7), transparent);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.spiritum-header-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.spiritum-logo {
+  font-size: 1.3rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.spiritum-nav {
+  display: flex;
+  gap: 18px;
+  font-size: 0.86rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.spiritum-nav a {
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.spiritum-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--spiritum-purple), var(--spiritum-blue));
+  transition: width 0.18s ease-out;
+}
+
+.spiritum-nav a:hover::after {
+  width: 100%;
+}
+
+.spiritum-hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.spiritum-hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, var(--spiritum-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--spiritum-grid) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(circle at center, black, transparent 70%);
+  opacity: 0.55;
+  animation: grid-shift 18s linear infinite;
+}
+
+.spiritum-hero-orbit {
+  position: absolute;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.32);
+  box-shadow:
+    0 0 32px rgba(56, 189, 248, 0.3),
+    0 0 64px rgba(109, 40, 217, 0.22);
+  opacity: 0.7;
+}
+
+.orbit-1 {
+  width: 420px;
+  height: 420px;
+  top: 8%;
+  left: 10%;
+  animation: orbit-slow 26s linear infinite;
+}
+
+.orbit-2 {
+  width: 540px;
+  height: 540px;
+  bottom: -8%;
+  right: -2%;
+  animation: orbit-slow 38s linear infinite reverse;
+}
+
+@keyframes grid-shift {
+  0% { transform: translate3d(0,0,0); }
+  100% { transform: translate3d(-40px,-40px,0); }
+}
+
+@keyframes orbit-slow {
+  0% { transform: rotate(0deg) translate3d(0,0,0); }
+  100% { transform: rotate(360deg) translate3d(0,0,0); }
+}
+
+.spiritum-hero-inner {
+  position: relative;
+  z-index: 10;
+  max-width: 960px;
+  padding: 52px 18px 72px;
+  text-align: center;
+}
+
+.spiritum-hero-title {
+  font-size: clamp(2.8rem, 4.4vw, 4.6rem);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  margin: 0 0 18px;
+}
+
+.spiritum-hero-subtitle {
+  margin: 0 auto 30px;
+  max-width: 540px;
+  color: var(--spiritum-muted);
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+.spiritum-hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 28px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.38), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(109, 40, 217, 0.66), transparent 55%),
+    rgba(15, 23, 42, 0.96);
+  box-shadow:
+    0 0 26px rgba(56, 189, 248, 0.4),
+    0 0 46px rgba(109, 40, 217, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.76rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.14s ease-out, box-shadow 0.14s ease-out, border-color 0.14s ease-out;
+}
+
+.spiritum-hero-button:hover {
+  transform: translateY(-1px) scale(1.01);
+  border-color: rgba(226, 232, 240, 0.9);
+  box-shadow:
+    0 0 36px rgba(56, 189, 248, 0.7),
+    0 0 66px rgba(109, 40, 217, 0.85);
+}
+
+.spiritum-featured,
+.spiritum-collection,
+.spiritum-product-page {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 24px 18px 70px;
+}
+
+.spiritum-featured-header h2 {
+  font-size: 1.08rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  margin-bottom: 18px;
+}
+
+.spiritum-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 18px;
+}
+
+.spiritum-product-card {
+  background: radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.12), transparent 60%),
+              radial-gradient(circle at 100% 100%, rgba(109, 40, 217, 0.18), transparent 60%),
+              rgba(15, 23, 42, 0.88);
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.16s ease-out, box-shadow 0.16s ease-out, border-color 0.16s ease-out;
+}
+
+.spiritum-product-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(226, 232, 240, 0.9);
+  box-shadow:
+    0 18px 32px rgba(15, 23, 42, 0.9),
+    0 0 26px rgba(56, 189, 248, 0.5);
+}
+
+.spiritum-product-info {
+  padding: 12px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.spiritum-product-info h3 {
+  font-size: 0.94rem;
+  margin: 0;
+}
+
+.spiritum-product-price {
+  font-size: 0.84rem;
+  color: var(--spiritum-muted);
+}
+
+.spiritum-empty {
+  color: var(--spiritum-muted);
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.spiritum-footer {
+  border-top: 1px solid rgba(148, 163, 184, 0.26);
+  margin-top: 18px;
+}
+
+.spiritum-footer-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 16px 18px 24px;
+  font-size: 0.8rem;
+  color: var(--spiritum-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.spiritum-footer-tagline {
+  margin: 0;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+}
+
+.spiritum-product-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 28px;
+  align-items: flex-start;
+}
+
+.spiritum-product-media {
+  background: radial-gradient(circle at 0% 0%, rgba(56,189,248,0.12), transparent 60%),
+              radial-gradient(circle at 100% 100%, rgba(109,40,217,0.18), transparent 60%),
+              rgba(15,23,42,0.92);
+  border-radius: 20px;
+  padding: 18px;
+  border: 1px solid rgba(148,163,184,0.4);
+}
+
+.spiritum-product-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.spiritum-product-title {
+  margin: 0;
+  font-size: 1.4rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.spiritum-product-price-main {
+  font-size: 1rem;
+  color: var(--spiritum-muted);
+}
+
+.spiritum-product-description {
+  font-size: 0.9rem;
+  color: var(--spiritum-muted);
+  line-height: 1.7;
+}
+
+.spiritum-product-form {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.spiritum-product-options label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.spiritum-product-options select {
+  width: 100%;
+  background: rgba(15,23,42,0.9);
+  color: var(--spiritum-text);
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,0.5);
+  padding: 8px 12px;
+  font-size: 0.86rem;
+}
+
+.spiritum-buy-button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.spiritum-collection-header h1 {
+  margin: 0 0 8px;
+  font-size: 1.3rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.spiritum-collection-description {
+  max-width: 520px;
+  font-size: 0.9rem;
+  color: var(--spiritum-muted);
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+@media (max-width: 900px) {
+  .spiritum-product-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .spiritum-header-inner {
+    padding-inline: 14px;
+  }
+  .spiritum-nav {
+    gap: 12px;
+    font-size: 0.72rem;
+  }
+  .spiritum-hero-inner {
+    padding-inline: 16px;
+  }
+  .spiritum-product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+}

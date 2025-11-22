@@ -1,1 +1,24 @@
-{"sections": {}, "order": []}
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "heading": "SPIRITUM",
+        "subheading": "Dark spiritual techwear for the awakened.",
+        "button_label": "Enter the realm",
+        "button_link": "/collections/all"
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "Selected artifacts",
+        "collection": "frontpage"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "featured_collection"
+  ]
+}

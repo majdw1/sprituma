@@ -1,0 +1,50 @@
+<section class="spiritum-featured">
+  <div class="spiritum-featured-header">
+    <h2>{{ section.settings.heading }}</h2>
+  </div>
+  {% if section.settings.collection != blank %}
+    {% assign coll = collections[section.settings.collection] %}
+    {% if coll != nil and coll.products_count > 0 %}
+      <div class="spiritum-product-grid">
+        {% for product in coll.products limit: 8 %}
+          <a href="{{ product.url }}" class="spiritum-product-card">
+            {% if product.featured_image %}
+              <div class="spiritum-product-image-wrap">
+                <img src="{{ product.featured_image | img_url: '600x' }}" alt="{{ product.title | escape }}">
+              </div>
+            {% endif %}
+            <div class="spiritum-product-info">
+              <h3>{{ product.title }}</h3>
+              <span class="spiritum-product-price">
+                {{ product.price | money }}
+              </span>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="spiritum-empty">Add products to this collection to display them here.</p>
+    {% endif %}
+  {% else %}
+    <p class="spiritum-empty">Choose a collection in this section's settings.</p>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Featured collection - SPIRITUM",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Selected artifacts"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    }
+  ]
+}
+{% endschema %}
