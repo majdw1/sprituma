@@ -1629,3 +1629,11 @@ h1, h2, h3 {
     margin:auto;
   }
 }
+.header-logo {
+    filter: none !important;          /* يلغي أي فلاتر */
+    mix-blend-mode: normal !important; /* يمنع اللمعان مع الخلفية */
+    image-rendering: crisp-edges;     /* يجعل الحواف واضحة */
+    opacity: 1 !important;            /* يكسر أي تقليل شفافية يعطي لمعان */
+    box-shadow: none !important;      /* يشيل أي إضاءة خارجية */
+    transition: none !important;      /* يمنع وميض الحركة */
+}
