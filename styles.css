@@ -1637,3 +1637,100 @@ h1, h2, h3 {
     box-shadow: none !important;      /* يشيل أي إضاءة خارجية */
     transition: none !important;      /* يمنع وميض الحركة */
 }
+/* HERO SECTION */
+.hero {
+    width: 100%;
+    padding: 120px 20px;
+    background: linear-gradient(180deg, #0a0f24 0%, #040611 100%);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    direction: rtl;
+    animation: fadeIn 1.2s ease-out forwards;
+}
+
+.hero-container {
+    max-width: 900px;
+    animation: slideUp 1.3s ease-out;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    background: linear-gradient(90deg, #4dd0ff, #8f5cff);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero-subtitle {
+    color: #e1e1e1;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    opacity: 0.85;
+}
+
+/* Stats */
+.hero-stats {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.stat h3 {
+    font-size: 2rem;
+    margin: 0;
+    background: linear-gradient(90deg, #4dd0ff, #8f5cff);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.stat p {
+    color: #ddd;
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
+
+/* WhatsApp Button */
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: #25d366;
+    color: #000;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    transform: scale(1.05);
+    background: #1aba59;
+}
+
+.wa-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+    0% { transform: translateY(40px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .hero-title { font-size: 2.3rem; }
+    .hero-stats { flex-direction: column; gap: 20px; }
+}
