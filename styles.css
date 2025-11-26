@@ -930,3 +930,137 @@ body {
     display: none !important;
   }
 }
+nav .logo img {
+  height: 70px !important;   /* كَبّر الحجم */
+  width: auto !important;    /* يحافظ على النسبة */
+}
+nav img,
+.nav img,
+.logo img,
+.navbar img,
+.navbar-brand img {
+    height: 90px !important;
+    width: auto !important;
+    max-height: 90px !important;
+}
+nav .logo,
+.nav .logo,
+.navbar-brand {
+    height: 110px !important;
+}
+nav {
+  height: 120px !important;
+}
+.main-nav {
+  display: flex;
+  align-items: center;
+ justify-content: space-between;
+
+  gap: 40px;
+  padding: 20px 40px;
+}
+
+.nav-logo img {
+  height: 70px;
+  width: auto;
+}
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 40px;
+}
+
+.nav-logo img {
+    height: 75px;
+    width: auto;
+}
+
+
+/* ===== NOVAX Mobile & Nav Overhaul ===== */
+
+/* Desktop defaults */
+@media (min-width: 881px) {
+  .main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1.5rem;
+    position: static;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .nav-toggle {
+    display: none !important;
+  }
+}
+
+/* Mobile full-screen menu */
+@media (max-width: 880px) {
+  .header-inner {
+    height: 64px;
+  }
+
+  .main-nav {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at top, rgba(240,193,91,0.14), #050507 55%, #000 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+    z-index: 900;
+  }
+
+  .main-nav.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .main-nav a {
+    font-size: 1.3rem;
+  }
+
+  .nav-toggle {
+    display: block !important;
+    position: relative;
+    z-index: 901;
+  }
+
+  .whatsapp-floating {
+    width: 60px;
+    height: 60px;
+    bottom: 18px;
+    left: 18px;
+    border-radius: 20px;
+  }
+
+  .whatsapp-floating img {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* Simple entrance animation for hero */
+@keyframes fadeUpNovax {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.hero-content {
+  animation: fadeUpNovax 0.7s ease-out 0.1s both;
+}
+
