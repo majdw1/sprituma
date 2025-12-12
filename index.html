@@ -178,12 +178,7 @@
 
     .footer{padding:22px 0 32px; border-top:1px solid var(--line); color:var(--muted); font-size:13px}
 
-    .floatBtns{position:fixed; left:14px; bottom:14px; display:flex; flex-direction:column; gap:10px; z-index:100}
-    .fab{display:flex; align-items:center; gap:10px; padding:12px 14px; border-radius:999px; border:1px solid rgba(255,255,255,.12); background: rgba(5,7,15,.80); backdrop-filter: blur(12px); box-shadow: 0 18px 55px rgba(0,0,0,.55); font-weight:1000; transition: transform .18s ease}
-    .fab:hover{transform: translateY(-2px)}
-    .wa{border-color: rgba(62,242,161,.30)}
-    .call{border-color: rgba(0,229,255,.30)}
-    .fab small{display:block; font-weight:700; color:var(--muted); font-size:11px}
+    
 
     .reveal{opacity:0; transform: translateY(26px); transition: opacity .9s ease, transform .9s ease}
     .reveal.show{opacity:1; transform: translateY(0)}
@@ -196,6 +191,43 @@
       .menu{display:none}
       .hamburger{display:inline-flex}
     }
+    .whatsapp-float{
+  position:fixed;
+  bottom:20px;
+  left:20px;        /* إذا بدك يمين → right:20px */
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  background:#25D366;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 12px 35px rgba(0,0,0,.45);
+  z-index:9999;
+}
+
+
+
+.whatsapp-float{
+  position:fixed;
+  bottom:20px;
+  left:20px;            /* إذا بدك يمين: right:20px */
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  background:#25D366;   /* اللون الرسمي لواتساب */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 14px 40px rgba(0,0,0,.5);
+  z-index:99999;
+  transition:transform .2s ease;
+}
+
+.whatsapp-float:hover{
+  transform:scale(1.08);
+}
+
   </style>
 </head>
 
@@ -499,6 +531,19 @@
     window.open(url, "_blank", "noopener");
   });
 </script>
+<!-- WhatsApp Floating Original Icon -->
+<a href="https://wa.me/972527004686"
+   class="whatsapp-float"
+   target="_blank"
+   aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true">
+    <path fill="#FFFFFF"
+      d="M19.11 17.53c-.29-.15-1.72-.85-1.99-.95-.27-.1-.47-.15-.67.15-.2.29-.77.95-.95 1.14-.17.19-.35.22-.64.07-.29-.15-1.22-.45-2.33-1.43-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.35.44-.52.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.79.37-.27.29-1.04 1.01-1.04 2.46s1.06 2.85 1.21 3.05c.15.2 2.09 3.19 5.06 4.47.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.72-.71 1.97-1.4.25-.69.25-1.28.17-1.4-.07-.12-.27-.2-.57-.35z"/>
+    <path fill="#FFFFFF"
+      d="M16.04 3C9.39 3 4 8.15 4 14.5c0 2.58.9 4.96 2.39 6.87L5 29l7.86-2.02a12.7 12.7 0 0 0 3.18.4c6.65 0 12.04-5.15 12.04-11.5S22.69 3 16.04 3zm0 21.1c-1.85 0-3.65-.5-5.22-1.45l-.37-.22-4.66 1.2 1.24-4.43-.24-.39c-1.02-1.58-1.56-3.4-1.56-5.3 0-5.32 4.63-9.65 10.81-9.65s10.81 4.33 10.81 9.65-4.63 9.65-10.81 9.65z"/>
+  </svg>
+</a>
+
 
 </body>
 </html>
