@@ -3,783 +3,481 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Klek Charge | התקנת עמדות טעינה לרכבים חשמליים לעסקים, בניינים ובתים</title>
-  <meta name="description" content="Klek Charge – התקנת עמדות טעינה לרכבים חשמליים לעסקים, חניונים, בניינים ובתים. ייעוץ, תשתיות, אישורים, התקנה ותחזוקה – הכל במקום אחד." />
-  <meta name="theme-color" content="#0b0f1a" />
+  <title>Klek Charge | התקנת עמדות טעינה לרכב חשמלי – פרימיום</title>
+  <meta name="description" content="Klek Charge – התקנת עמדות טעינה לרכבים חשמליים לבתים, בניינים וחברות. תכנון עומסים, תשתיות, התקנה ותחזוקה – הכל במקום אחד." />
+  <meta name="theme-color" content="#070a12" />
+  <link rel="icon" href="assets/favicon.png" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Klek Charge | EV Charging Solutions" />
-  <meta property="og:description" content="פתרונות טעינה לחברות, חניונים, בניינים ובתים – תכנון, תשתיות, התקנה ותחזוקה." />
-  <meta property="og:type" content="website" />
-
-  <!-- Simple, fast CSS (no frameworks) -->
   <style>
     :root{
-      --bg:#070a12;
-      --card:#0b1020;
-      --card2:#0a1228;
-      --text:#e9f0ff;
-      --muted:#a9b4d0;
+      --bg:#05070f;
       --line:rgba(255,255,255,.08);
-      --brand:#7c5cff;
-      --brand2:#00e5ff;
-      --ok:#3ef2a1;
-      --shadow: 0 18px 60px rgba(0,0,0,.45);
-      --radius:18px;
-      --radius2:24px;
+      --text:#eef2ff;
+      --muted:#9aa4c7;
+      --g1:#7c5cff;
+      --g2:#00e5ff;
+      --g3:#3ef2a1;
+      --shadow: 0 26px 95px rgba(0,0,0,.55);
+      --r:22px;
       --max:1180px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color:var(--text);
       background:
-        radial-gradient(1200px 700px at 15% 10%, rgba(124,92,255,.20), transparent 60%),
-        radial-gradient(900px 500px at 85% 20%, rgba(0,229,255,.15), transparent 55%),
-        radial-gradient(900px 600px at 50% 100%, rgba(62,242,161,.08), transparent 60%),
+        radial-gradient(1200px 650px at 10% 10%, rgba(124,92,255,.22), transparent 60%),
+        radial-gradient(1000px 600px at 90% 20%, rgba(0,229,255,.18), transparent 60%),
+        radial-gradient(1000px 700px at 50% 110%, rgba(62,242,161,.10), transparent 55%),
         var(--bg);
-      line-height:1.55;
+      line-height:1.6;
+      overflow-x:hidden;
     }
     a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
+
     .topbar{
-      position:sticky;top:0;z-index:50;
-      backdrop-filter: blur(12px);
-      background: rgba(7,10,18,.72);
-      border-bottom:1px solid var(--line);
+      position:sticky; top:0; z-index:50;
+      background: rgba(5,7,15,.78);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
     }
-    .nav{
-      display:flex;align-items:center;justify-content:space-between;
-      padding:14px 0;
-      gap:12px;
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0; gap:12px}
+    .brand{display:flex; align-items:center; gap:12px; min-width:240px}
+    .brandLogo{
+      width:52px; height:52px; object-fit:contain;
+      border-radius:16px; padding:7px;
+      background: rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow: 0 16px 50px rgba(124,92,255,.18);
+      transform: perspective(900px) rotateY(8deg);
+      transition: transform .45s ease, box-shadow .45s ease;
+      filter:none;
     }
-    .brand{
-      display:flex;align-items:center;gap:12px;min-width:190px;
-    }
-    .logo{
-      width:44px;height:44px;border-radius:14px;
-      background:
-        radial-gradient(14px 14px at 30% 30%, rgba(255,255,255,.25), transparent 70%),
-        linear-gradient(135deg, rgba(124,92,255,.95), rgba(0,229,255,.8));
-      box-shadow: 0 14px 40px rgba(124,92,255,.22);
-      position:relative; overflow:hidden;
-    }
-    .logo:after{
-      content:""; position:absolute; inset:-20%;
-      background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.25), transparent 65%);
-      transform: rotate(20deg);
-      animation: shine 6s ease-in-out infinite;
-    }
-    @keyframes shine{
-      0%,35%{transform:translateX(-40%) rotate(20deg);opacity:.0}
-      45%{opacity:.35}
-      70%{transform:translateX(55%) rotate(20deg);opacity:.0}
-      100%{opacity:0}
-    }
-    .brand h1{margin:0;font-size:15px;letter-spacing:.2px}
-    .brand p{margin:0;color:var(--muted);font-size:12px}
-    .menu{display:flex;gap:18px;align-items:center}
-    .menu a{color:var(--muted);font-size:14px}
+    .brandLogo:hover{transform: perspective(900px) rotateY(0deg) scale(1.06); box-shadow: 0 22px 70px rgba(0,229,255,.18)}
+    .brandTitle{display:flex;flex-direction:column;gap:2px}
+    .brandTitle b{font-size:14px; letter-spacing:.3px}
+    .brandTitle span{font-size:12px; color:var(--muted)}
+
+    .menu{display:flex; gap:16px; align-items:center}
+    .menu a{font-size:14px; color:var(--muted)}
     .menu a:hover{color:var(--text)}
-    .ctaRow{display:flex;gap:10px;align-items:center}
+    .ctaRow{display:flex; gap:10px; align-items:center}
+    .hamburger{display:none}
+
     .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      gap:10px;
-      padding:10px 14px;border-radius:14px;
-      border:1px solid var(--line);
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:10px 14px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
       background: rgba(255,255,255,.03);
       color:var(--text);
-      box-shadow: 0 10px 24px rgba(0,0,0,.25);
-      transition:transform .15s ease, background .15s ease, border-color .15s ease;
-      font-weight:600;font-size:14px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.28);
+      transition: transform .18s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease;
+      font-weight:900; font-size:14px;
       user-select:none;
     }
-    .btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14)}
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.18)}
     .btnPrimary{
-      border-color: transparent;
-      background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(0,229,255,.85));
-      color:#081022;
+      border:none;
+      color:#05070f;
+      background: linear-gradient(135deg, var(--g1), var(--g2));
+      box-shadow: 0 18px 60px rgba(124,92,255,.35);
     }
-    .btnPrimary:hover{transform:translateY(-1px) scale(1.01)}
-    .btnSmall{padding:9px 12px;border-radius:13px;font-size:13px}
-    .hamburger{display:none}
-    .hero{
-      padding:46px 0 22px;
-    }
-    .heroGrid{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:22px;
-      align-items:stretch;
-    }
-    .badge{
-      display:inline-flex;align-items:center;gap:10px;
-      padding:8px 12px;border-radius:999px;
-      background: rgba(255,255,255,.04);
-      border:1px solid var(--line);
-      color:var(--muted);
-      font-size:13px;
-      width:max-content;
-    }
-    .dot{
-      width:10px;height:10px;border-radius:999px;background:var(--ok);
-      box-shadow: 0 0 24px rgba(62,242,161,.55);
-    }
-    .headline{margin:14px 0 10px;font-size:40px;line-height:1.12}
-    .sub{margin:0;color:var(--muted);font-size:16px;max-width:60ch}
-    .heroActions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-    .trust{
-      display:flex;gap:14px;flex-wrap:wrap;margin-top:18px;color:var(--muted);font-size:13px
-    }
-    .trust .pill{
-      padding:8px 10px;border-radius:999px;border:1px solid var(--line);
-      background: rgba(255,255,255,.02);
-    }
+    .btnPrimary:hover{box-shadow: 0 26px 90px rgba(0,229,255,.45); transform: translateY(-2px) scale(1.01)}
+
+    .hero{padding:56px 0 12px}
+    .heroGrid{display:grid; grid-template-columns: 1.1fr .9fr; gap:18px; align-items:stretch}
+    .badge{display:inline-flex; align-items:center; gap:10px; padding:8px 12px; border-radius:999px; border:1px solid var(--line); background: rgba(255,255,255,.03); color:var(--muted); width:max-content; font-size:13px}
+    .dot{width:10px; height:10px; border-radius:999px; background: var(--g3); box-shadow: 0 0 24px rgba(62,242,161,.55)}
+    .hero h1{margin:14px 0 10px; font-size:44px; line-height:1.12; letter-spacing:.2px}
+    .hero p{margin:0; color:var(--muted); font-size:16px; max-width:65ch}
+    .heroActions{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px}
+    .trust{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
+    .pill{padding:8px 10px; border-radius:999px; border:1px solid var(--line); background: rgba(255,255,255,.02); color:var(--muted); font-size:12px}
+
     .heroCard{
+      border-radius: 26px;
       border:1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border-radius: var(--radius2);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
       box-shadow: var(--shadow);
       overflow:hidden;
       position:relative;
-      min-height: 420px;
+      transform-style: preserve-3d;
     }
     .heroCard:before{
-      content:"";position:absolute;inset:0;
+      content:"";
+      position:absolute; inset:-20%;
       background:
-        radial-gradient(600px 240px at 65% 18%, rgba(0,229,255,.14), transparent 60%),
-        radial-gradient(420px 280px at 30% 38%, rgba(124,92,255,.16), transparent 60%),
-        radial-gradient(520px 320px at 50% 90%, rgba(62,242,161,.10), transparent 60%);
+        radial-gradient(600px 240px at 65% 18%, rgba(0,229,255,.16), transparent 60%),
+        radial-gradient(520px 300px at 25% 30%, rgba(124,92,255,.18), transparent 62%),
+        radial-gradient(520px 320px at 50% 95%, rgba(62,242,161,.10), transparent 62%);
+      filter: blur(10px);
       pointer-events:none;
     }
-    .heroCardInner{position:relative;padding:18px}
-    .bigStat{
-      display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;
-    }
-    .stat{
-      border:1px solid var(--line);
-      background: rgba(7,10,18,.35);
-      border-radius:16px;padding:14px;
-    }
-    .stat b{display:block;font-size:18px}
-    .stat span{display:block;color:var(--muted);font-size:12px;margin-top:4px}
-    .mock{
-      margin-top:14px;
-      border:1px solid rgba(255,255,255,.10);
-      background: linear-gradient(180deg, rgba(11,16,32,.65), rgba(7,10,18,.55));
-      border-radius:18px;
-      padding:14px;
-    }
-    .mockRow{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-    .chip{
-      padding:8px 10px;border-radius:999px;
-      background: rgba(255,255,255,.04);
-      border:1px solid var(--line);
-      color:var(--muted);font-size:12px;
-    }
-    .section{padding:44px 0}
-    .section h2{margin:0 0 10px;font-size:28px}
-    .section p.lead{margin:0;color:var(--muted);max-width:70ch}
-    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
-    .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px}
-    .card{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      border-radius: var(--radius);
-      padding:16px;
-      box-shadow: 0 12px 30px rgba(0,0,0,.25);
-    }
-    .card h3{margin:0 0 8px;font-size:16px}
-    .card p{margin:0;color:var(--muted);font-size:14px}
-    .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
-    .kpi{padding:14px;border-radius:16px;border:1px solid var(--line);background: rgba(7,10,18,.30)}
-    .kpi b{display:block;font-size:20px}
-    .kpi span{display:block;color:var(--muted);font-size:12px;margin-top:4px}
-    .projects{margin-top:18px}
-    .project{
-      display:flex;gap:14px;align-items:flex-start;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.02);
-      border-radius:18px;padding:16px;
-    }
-    .icon{
-      width:42px;height:42px;border-radius:14px;
-      border:1px solid rgba(255,255,255,.10);
-      background: linear-gradient(135deg, rgba(124,92,255,.25), rgba(0,229,255,.15));
-      display:flex;align-items:center;justify-content:center;
-      box-shadow: 0 12px 40px rgba(0,0,0,.28);
-      flex:0 0 auto;
-    }
-    .icon svg{opacity:.95}
-    .muted{color:var(--muted)}
-    .list{margin:10px 0 0;padding:0 18px;color:var(--muted);font-size:14px}
-    .list li{margin:6px 0}
-    .faq{margin-top:14px}
-    details{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.02);
-      border-radius:16px;
-      padding:12px 14px;
-    }
-    details+details{margin-top:10px}
-    summary{cursor:pointer;font-weight:700}
+    .heroCardInner{position:relative; padding:18px}
+    .offerBig{margin-top:12px; border:1px solid rgba(255,255,255,.10); background: rgba(5,7,15,.38); border-radius:18px; padding:16px}
+    .offerBig b{display:block; font-size:14px; color:var(--muted)}
+    .offerBig .price{margin-top:6px; font-size:34px; font-weight:1000; letter-spacing:.2px; background: linear-gradient(135deg, var(--g1), var(--g2)); -webkit-background-clip:text; background-clip:text; color:transparent}
+    .stats{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:12px}
+    .stat{border:1px solid rgba(255,255,255,.10); background: rgba(5,7,15,.35); border-radius:16px; padding:14px}
+    .stat b{display:block; font-size:16px}
+    .stat span{display:block; color:var(--muted); font-size:12px; margin-top:4px}
+
+    .section{padding:46px 0}
+    .section h2{margin:0 0 10px; font-size:28px}
+    .lead{margin:0; color:var(--muted); max-width:72ch}
+    .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:18px}
+    .card{border:1px solid var(--line); background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border-radius: var(--r); padding:16px; box-shadow: 0 14px 40px rgba(0,0,0,.25); transform-style: preserve-3d; transition: transform .45s ease, box-shadow .45s ease, border-color .45s ease}
+    .card:hover{transform: translateY(-10px) scale(1.02) rotateX(4deg); box-shadow: 0 34px 110px rgba(0,0,0,.65), 0 0 55px rgba(124,92,255,.25); border-color: rgba(255,255,255,.14)}
+    .card h3{margin:0 0 8px; font-size:16px}
+    .card p{margin:0; color:var(--muted); font-size:14px}
+
+    .priceTop{display:flex; align-items:flex-end; justify-content:space-between; gap:10px; flex-wrap:wrap}
+    .priceSmall{font-size:22px; letter-spacing:.2px; background: linear-gradient(135deg, var(--g1), var(--g2)); -webkit-background-clip:text; background-clip:text; color:transparent; font-weight:1000}
+    ul.features{margin:10px 0 0; padding:0 18px; color:var(--muted); font-size:14px}
+    ul.features li{margin:6px 0}
+
+    .portfolioImg{width:100%; height:180px; object-fit:cover; border-radius:16px; border:1px solid rgba(255,255,255,.08); box-shadow: 0 18px 60px rgba(0,0,0,.35); transition: transform .45s ease; margin-bottom:12px; background: rgba(255,255,255,.02)}
+    .card:hover .portfolioImg{transform: scale(1.06)}
+
+    details{border:1px solid var(--line); background: rgba(255,255,255,.02); border-radius:16px; padding:12px 14px}
+    details + details{margin-top:10px}
+    summary{cursor:pointer; font-weight:1000}
     summary::-webkit-details-marker{display:none}
-    .contactGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
-    .field{display:flex;flex-direction:column;gap:8px;margin-bottom:10px}
-    input, textarea{
-      width:100%;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(7,10,18,.45);
-      color:var(--text);
-      padding:12px 12px;
-      font-size:14px;
-      outline:none;
-    }
+    .faqText{color:var(--muted); margin-top:8px; font-size:14px}
+
+    .contactGrid{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:18px}
+    .field{display:flex; flex-direction:column; gap:8px; margin-bottom:10px}
+    input, textarea{width:100%; border-radius:14px; border:1px solid rgba(255,255,255,.12); background: rgba(5,7,15,.45); color:var(--text); padding:12px 12px; font-size:14px; outline:none}
     input:focus, textarea:focus{border-color: rgba(0,229,255,.35)}
-    textarea{min-height:120px;resize:vertical}
-    .footer{
-      padding:24px 0 34px;
-      border-top:1px solid var(--line);
-      color:var(--muted);
-      font-size:13px;
-    }
-    .floatBtns{
-      position:fixed;
-      left:14px;
-      bottom:14px;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-      z-index:100;
-    }
-    .fab{
-      display:flex;align-items:center;gap:10px;
-      padding:12px 14px;border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(7,10,18,.80);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 16px 40px rgba(0,0,0,.45);
-      font-weight:800;
-    }
-    .fab:hover{transform:translateY(-1px)}
-    .fab small{display:block;font-weight:600;color:var(--muted);font-size:11px}
+    textarea{min-height:120px; resize:vertical}
+    .note{color:var(--muted); font-size:12px; margin-top:10px}
+
+    .footer{padding:22px 0 32px; border-top:1px solid var(--line); color:var(--muted); font-size:13px}
+
+    .floatBtns{position:fixed; left:14px; bottom:14px; display:flex; flex-direction:column; gap:10px; z-index:100}
+    .fab{display:flex; align-items:center; gap:10px; padding:12px 14px; border-radius:999px; border:1px solid rgba(255,255,255,.12); background: rgba(5,7,15,.80); backdrop-filter: blur(12px); box-shadow: 0 18px 55px rgba(0,0,0,.55); font-weight:1000; transition: transform .18s ease}
+    .fab:hover{transform: translateY(-2px)}
     .wa{border-color: rgba(62,242,161,.30)}
     .call{border-color: rgba(0,229,255,.30)}
-    .hideMobile{display:block}
-    .showMobile{display:none}
+    .fab small{display:block; font-weight:700; color:var(--muted); font-size:11px}
 
-    /* Mobile */
+    .reveal{opacity:0; transform: translateY(26px); transition: opacity .9s ease, transform .9s ease}
+    .reveal.show{opacity:1; transform: translateY(0)}
+
     @media (max-width: 920px){
       .heroGrid{grid-template-columns:1fr}
-      .headline{font-size:34px}
-      .kpis{grid-template-columns:repeat(2,1fr)}
+      .hero h1{font-size:34px}
       .grid3{grid-template-columns:1fr}
-      .grid2{grid-template-columns:1fr}
       .contactGrid{grid-template-columns:1fr}
       .menu{display:none}
       .hamburger{display:inline-flex}
-      .hideMobile{display:none}
-      .showMobile{display:block}
-      .heroCard{min-height: unset}
     }
-    /* Reduced motion */
-    @media (prefers-reduced-motion: reduce){
-      html{scroll-behavior:auto}
-      .logo:after{animation:none}
-      .btn, .fab{transition:none}
-    }
-    .brandLogo{
-  width:46px;
-  height:46px;
-  object-fit:contain;
-  border-radius:14px;
-  padding:6px;
-  background: rgba(255,255,255,.03);
-  border:1px solid rgba(255,255,255,.12);
-  box-shadow: 0 12px 40px rgba(124,92,255,.20);
-  filter:none;
-}
-
   </style>
-
-  <!-- LocalBusiness schema -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"LocalBusiness",
-    "name":"Klek Charge",
-    "description":"התקנת עמדות טעינה לרכבים חשמליים לעסקים, חניונים, בניינים ובתים.",
-    "areaServed":"IL",
-    "telephone":"+972527004686",
-    "url":"https://example.com",
-    "sameAs":[]
-  }
-  </script>
 </head>
 
 <body>
-  <!-- Top Bar -->
-  <header class="topbar">
-    <div class="wrap">
-      <nav class="nav">
-        <a class="brand" href="#top" aria-label="Klek Charge Home">
-          <span class="logo" aria-hidden="true"></span>
-          <span>
-            <h1>Klek Charge</h1>
-            <p>EV Charging • תכנון • תשתיות • התקנה • תחזוקה</p>
-          </span>
-        </a>
 
-        <div class="menu" aria-label="Primary navigation">
-          <a href="#services">שירותים</a>
-          <a href="#projects">פתרונות לחברות</a>
-          <a href="#process">תהליך עבודה</a>
-          <a href="#faq">שאלות נפוצות</a>
-          <a href="#contact">צור קשר</a>
-        </div>
-
-        <div class="ctaRow">
-          <a class="btn btnSmall hideMobile" href="tel:+972527004686">📞 052-7004686</a>
-          <a class="btn btnPrimary" href="#contact">קבל הצעת מחיר</a>
-          <button class="btn btnSmall hamburger" id="menuBtn" aria-label="Open menu">☰</button>
-        </div>
-      </nav>
-
-      <!-- Mobile menu -->
-      <div id="mobileMenu" style="display:none;padding:0 0 14px;">
-        <div class="card" style="padding:12px;">
-          <div style="display:flex;flex-direction:column;gap:10px">
-            <a class="btn" href="#services" onclick="closeMenu()">שירותים</a>
-            <a class="btn" href="#projects" onclick="closeMenu()">פתרונות לחברות</a>
-            <a class="btn" href="#process" onclick="closeMenu()">תהליך עבודה</a>
-            <a class="btn" href="#faq" onclick="closeMenu()">שאלות נפוצות</a>
-            <a class="btn btnPrimary" href="#contact" onclick="closeMenu()">קבל הצעת מחיר</a>
-            <a class="btn" href="tel:+972527004686" onclick="closeMenu()">📞 052-7004686</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <main id="top" class="hero">
-    <div style="margin-bottom:16px;max-width:240px">
-  <img src="klek-logo.webp" alt="Klek Charge" style="width:100%;height:auto;filter:none">
-</div>
-
-    <div class="wrap">
-      <div class="heroGrid">
-        <section>
-          <div class="badge"><span class="dot"></span> זמינות מהירה • עבודה לפי תקן • דגש על בטיחות</div>
-          <h2 class="headline">פתרונות טעינה לרכבים חשמליים<br/>שנראים כמו <span style="background:linear-gradient(135deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent;">חברה גדולה</span></h2>
-          <p class="sub">
-            התקנה מקצועית לעסקים, חניונים, בניינים ובתים פרטיים: תכנון עומסים, תשתיות, לוחות, עמדות 7–22kW, הגנות ובדיקות – עם שירות ברור ומסודר.
-          </p>
-
-          <div class="heroActions">
-            <a class="btn btnPrimary" href="#contact">✅ הצעת מחיר חינם</a>
-            <a class="btn" href="#projects">לפתרונות לחברות</a>
-            <a class="btn" href="https://wa.me/972527004686?text=%D7%A9%D7%9C%D7%95%D7%9D%20Klek%20Charge%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%94%D7%AA%D7%A7%D7%A0%D7%AA%20%D7%A2%D7%9E%D7%93%D7%AA%20%D7%98%D7%A2%D7%99%D7%A0%D7%94." target="_blank" rel="noopener">💬 WhatsApp</a>
-          </div>
-
-          <div class="trust">
-            <span class="pill">⚡ עמדות 7–22kW</span>
-            <span class="pill">🏢 לעסקים ובניינים</span>
-            <span class="pill">🧰 תשתיות ולוחות</span>
-            <span class="pill">🛡️ פתרונות בטיחות והגנות</span>
-          </div>
-        </section>
-
-        <aside class="heroCard" aria-label="Highlights card">
-          <div class="heroCardInner">
-            <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
-              <div class="badge" style="margin:0"><span class="dot" style="background:var(--brand2)"></span> Corporate-grade Execution</div>
-              <a class="btn btnSmall" href="#contact">לבדיקת התאמה</a>
-            </div>
-
-            <div class="bigStat">
-              <div class="stat">
-                <b>תכנון עומסים</b>
-                <span>התאמה לתשתית + הרחבות עתידיות</span>
-              </div>
-              <div class="stat">
-                <b>התקנה נקייה</b>
-                <span>מראה יוקרתי בחניון/קיר/עמוד</span>
-              </div>
-              <div class="stat">
-                <b>ניהול כבלים</b>
-                <span>סדר, בטיחות, ונוחות שימוש</span>
-              </div>
-              <div class="stat">
-                <b>בדיקות והגנות</b>
-                <span>תקן, מפסקים, הגנות נזילה</span>
-              </div>
-            </div>
-
-            <div class="mock">
-              <div class="mockRow">
-                <span class="chip">🏗️ פרויקטים לבניינים</span>
-                <span class="chip">🏢 פתרונות לחברות</span>
-                <span class="chip">🚗 חניונים</span>
-                <span class="chip">🏠 בית פרטי</span>
-              </div>
-              <div style="margin-top:12px;color:var(--muted);font-size:13px">
-                ✅ עבודה מסודרת עם מסמכים, הצעות מחיר ברורות, וליווי עד מסירה.
-              </div>
-            </div>
-
-          </div>
-        </aside>
-      </div>
-    </div>
-  </main>
-
-  <!-- Services -->
-  <section id="services" class="section">
-    <div class="wrap">
-      <h2>שירותים</h2>
-      <p class="lead">כל מה שצריך כדי להקים טעינה אמינה ומהירה — בצורה מקצועית שמכבדת עסקים ולקוחות.</p>
-
-      <div class="grid3">
-        <div class="card">
-          <h3>התקנת עמדות טעינה 7–22kW</h3>
-          <p>התקנה לבית, עסק, משרד וחניון – כולל התאמת תשתית, נקודות חשמל והגנות.</p>
-        </div>
-        <div class="card">
-          <h3>תשתיות לחניונים ובניינים</h3>
-          <p>תכנון קווים, תעלות, לוחות משנה, חלוקת עומסים, והכנה להתרחבות עתידית.</p>
-        </div>
-        <div class="card">
-          <h3>בדיקות, בטיחות ותחזוקה</h3>
-          <p>בדיקות תקינות, שדרוג הגנות, פתרון תקלות, ותחזוקה שוטפת למערכות קיימות.</p>
-        </div>
-      </div>
-
-      <div class="kpis">
-        <div class="kpi"><b>⚡ מהיר</b><span>זמינות ומהירות ביצוע</span></div>
-        <div class="kpi"><b>🛡️ בטוח</b><span>עבודה לפי סטנדרט גבוה</span></div>
-        <div class="kpi"><b>📄 מסודר</b><span>הצעת מחיר + מסירה נקייה</span></div>
-        <div class="kpi"><b>🏢 עסקי</b><span>נראות שמתאימה לחברות</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Corporate Solutions / Projects -->
-  <section id="projects" class="section">
-    <div class="wrap">
-      <h2>פתרונות לחברות, בניינים וחניונים</h2>
-      <p class="lead">הדגש הוא על תוצאה שנראית “Enterprise”: תכנון, סדר, בטיחות, וניהול פרויקט.</p>
-
-      <div class="projects grid2">
-        <div class="project">
-          <div class="icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-              <path d="M4 20V10a2 2 0 0 1 2-2h3V6a2 2 0 0 1 2-2h5a2 2 0 0 1 2 2v14" stroke="white" stroke-opacity=".9" stroke-width="1.6"/>
-              <path d="M8 20v-6h8v6" stroke="white" stroke-opacity=".9" stroke-width="1.6"/>
-            </svg>
-          </div>
-          <div>
-            <h3 style="margin:0">בניינים משותפים</h3>
-            <p class="muted" style="margin:6px 0 0">תשתית חכמה ליותר מעמדה אחת, חלוקת עומסים, והכנה להתרחבות.</p>
-            <ul class="list">
-              <li>תכנון עומסים + פתרונות הגנה</li>
-              <li>הכנת תשתית נקייה בחניון</li>
-              <li>מסירה מסודרת לוועד/חברה</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="project">
-          <div class="icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-              <path d="M3 7h18v10H3z" stroke="white" stroke-opacity=".9" stroke-width="1.6"/>
-              <path d="M7 17v3h10v-3" stroke="white" stroke-opacity=".9" stroke-width="1.6"/>
-              <path d="M8 10h8" stroke="white" stroke-opacity=".9" stroke-width="1.6"/>
-            </svg>
-          </div>
-          <div>
-            <h3 style="margin:0">חברות ומשרדים</h3>
-            <p class="muted" style="margin:6px 0 0">עמדות לעובדים/רכבי חברה, תיעוד ברור, וניהול התקנה בשטח.</p>
-            <ul class="list">
-              <li>ניהול פרויקט ועמידה בזמנים</li>
-              <li>אסתטיקה גבוהה (נראות)</li>
-              <li>תחזוקה ותמיכה לאחר התקנה</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="project">
-          <div class="icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-              <path d="M5 16h14l-1-6H6l-1 6Z" stroke="white" stroke-opacity=".9" stroke-width="1.6"/>
-              <path d="M8 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z" stroke="white" stroke-opacity=".9" stroke-width="1.6"/>
-              <path d="M16 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z" stroke="white" stroke-opacity=".9" stroke-width="1.6"/>
-            </svg>
-          </div>
-          <div>
-            <h3 style="margin:0">חניונים מסחריים</h3>
-            <p class="muted" style="margin:6px 0 0">סידור תעלות/כבלים, תיוג, והכנה לריבוי עמדות.</p>
-            <ul class="list">
-              <li>פתרונות תשתית תעשייתיים</li>
-              <li>סדר וניהול כבלים</li>
-              <li>תכנון לשדרוג עתידי</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="project">
-          <div class="icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-              <path d="M12 2v8" stroke="white" stroke-opacity=".9" stroke-width="1.6"/>
-              <path d="M9 10h6l-3 12-3-12Z" stroke="white" stroke-opacity=".9" stroke-width="1.6"/>
-              <path d="M6 10h12" stroke="white" stroke-opacity=".9" stroke-width="1.6"/>
-            </svg>
-          </div>
-          <div>
-            <h3 style="margin:0">בית פרטי</h3>
-            <p class="muted" style="margin:6px 0 0">התקנה נקייה ומהירה עם התאמה ללוח ולתשתית הבית.</p>
-            <ul class="list">
-              <li>חיווט מסודר והגנות</li>
-              <li>מיקום חכם ונוח</li>
-              <li>בדיקה ומסירה</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Process -->
-  <section id="process" class="section">
-    <div class="wrap">
-      <h2>תהליך עבודה מסודר</h2>
-      <p class="lead">ככה נראה תהליך של “חברה גדולה”: קצר, ברור, ומגובה בבדיקות.</p>
-
-      <div class="grid3">
-        <div class="card">
-          <h3>1) אבחון ותכנון</h3>
-          <p>שיחת אפיון + בדיקה בשטח: תשתית, לוח, מרחקים, תעלות, עומסים, והיתכנות.</p>
-        </div>
-        <div class="card">
-          <h3>2) הצעת מחיר ברורה</h3>
-          <p>הצעת מחיר מסודרת הכוללת חומרים, עבודה, אחריות, ולו״ז ביצוע.</p>
-        </div>
-        <div class="card">
-          <h3>3) התקנה ומסירה</h3>
-          <p>התקנה נקייה, בדיקות בטיחות, הדרכה ללקוח, ומסירה מסודרת.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Social proof -->
-  <section class="section">
-    <div class="wrap">
-      <h2>לקוחות מרוצים (דוגמא לנראות)</h2>
-      <p class="lead">ضع هنا شهادات حقيقية لاحقاً. أنا عامل التصميم جاهز.</p>
-
-      <div class="grid3">
-        <div class="card">
-          <h3>“ביצוע נקי ומדויק”</h3>
-          <p>התקנה בחניון בניין – עבודה מסודרת, יחס מקצועי, והכל בזמן.</p>
-          <p class="muted" style="margin-top:10px">— ועד בית, ירושלים</p>
-        </div>
-        <div class="card">
-          <h3>“נראות ברמה גבוהה”</h3>
-          <p>פתרון לעסק עם מספר עמדות — נראה כמו סטנדרט של חברה גדולה.</p>
-          <p class="muted" style="margin-top:10px">— מנהל תפעול, חברה פרטית</p>
-        </div>
-        <div class="card">
-          <h3>“שירות מהיר”</h3>
-          <p>זמינות מעולה + הסבר ברור. מומלץ.</p>
-          <p class="muted" style="margin-top:10px">— לקוח פרטי</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="portfolio" class="section">
+<header class="topbar">
   <div class="wrap">
-    <h2>Portfolio – פרויקטים נבחרים</h2>
-    <p class="lead">דוגמאות לנראות וביצוע ברמה של חברות גדולות (Enterprise).</p>
+    <nav class="nav">
+      <a class="brand" href="#top" aria-label="Klek Charge Home">
+        <img class="brandLogo" src="klek-logo.webp" alt="Klek Charge Logo" width="52" height="52" loading="eager" decoding="async">
+        <div class="brandTitle">
+          <b>Klek Charge</b>
+          <span>EV Charging • תכנון • תשתיות • התקנה</span>
+        </div>
+      </a>
+
+      <div class="menu" aria-label="Primary navigation">
+        <a href="#services">שירותים</a>
+        <a href="#offers">הצעות</a>
+        <a href="#portfolio">פרויקטים</a>
+        <a href="#faq">שאלות</a>
+        <a href="#contact">צור קשר</a>
+      </div>
+
+      <div class="ctaRow">
+        <a class="btn" href="tel:+972527004686">📞 052-7004686</a>
+        <a class="btn btnPrimary" href="#contact">קבל הצעת מחיר</a>
+        <button class="btn hamburger" id="menuBtn" aria-label="Open menu">☰</button>
+      </div>
+    </nav>
+
+    <div id="mobileMenu" style="display:none;padding:0 0 14px;">
+      <div class="card" style="padding:12px;">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <a class="btn" href="#services" onclick="closeMenu()">שירותים</a>
+          <a class="btn" href="#offers" onclick="closeMenu()">הצעות</a>
+          <a class="btn" href="#portfolio" onclick="closeMenu()">פרויקטים</a>
+          <a class="btn" href="#faq" onclick="closeMenu()">שאלות</a>
+          <a class="btn btnPrimary" href="#contact" onclick="closeMenu()">קבל הצעת מחיר</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="top" class="hero">
+  <div class="wrap">
+    <div class="heroGrid">
+      <section class="reveal">
+        <div class="badge"><span class="dot"></span> זמינות מהירה • עבודה נקייה • סטנדרט פרימיום</div>
+        <h1>
+          התקנת עמדות טעינה לרכב חשמלי<br>
+          ברמה של <span style="background:linear-gradient(135deg,var(--g1),var(--g2));-webkit-background-clip:text;background-clip:text;color:transparent;">חברה גדולה</span>
+        </h1>
+        <p>
+          הסבר קצר וממוקד: בדיקת תשתית ועומסים → התקנה נקייה ובטוחה 7–22kW → מסירה מסודרת.
+          מושלם לבית, לבניין או לעסק.
+        </p>
+
+        <div class="heroActions">
+          <a class="btn btnPrimary" href="#offers">🔥 לראות הצעות</a>
+          <a class="btn" href="#portfolio">לצפייה בפרויקטים</a>
+          <a class="btn" target="_blank" rel="noopener"
+             href="https://wa.me/972527004686?text=%D7%A9%D7%9C%D7%95%D7%9D%20Klek%20Charge%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20(%D7%94%D7%97%D7%9C%20%D7%9E-4900).">💬 WhatsApp</a>
+        </div>
+
+        <div class="trust">
+          <span class="pill">⚡ 7–22kW</span>
+          <span class="pill">🏢 עסקים ובניינים</span>
+          <span class="pill">🏠 בית פרטי</span>
+          <span class="pill">🛡️ בטיחות והגנות</span>
+        </div>
+      </section>
+
+      <aside class="heroCard reveal" aria-label="Offer card">
+        <div class="heroCardInner">
+          <div class="badge" style="margin:0"><span class="dot" style="background:var(--g2)"></span> הצעה מובילה • הכל כלול</div>
+
+          <div class="offerBig">
+            <b>עמדת טעינה + התקנה + תשתית</b>
+            <div class="price">החל מ‑₪4,900</div>
+            <div style="color:var(--muted); font-size:13px; margin-top:6px">
+              המחיר משתנה לפי מרחק, תשתית קיימת ותנאי שטח.
+            </div>
+          </div>
+
+          <div class="stats">
+            <div class="stat"><b>תכנון עומסים</b><span>מוכן להתרחבות עתידית</span></div>
+            <div class="stat"><b>התקנה נקייה</b><span>נראות פרימיום בשטח</span></div>
+            <div class="stat"><b>תשתיות וכבלים</b><span>סידור תעלות וניהול</span></div>
+            <div class="stat"><b>בדיקות בטיחות</b><span>הגנות ומסירה מסודרת</span></div>
+          </div>
+
+          <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
+            <a class="btn btnPrimary" href="#contact">קבל הצעת מחיר</a>
+            <a class="btn" href="tel:+972527004686">חייג עכשיו</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<section id="services" class="section">
+  <div class="wrap">
+    <div class="reveal">
+      <h2>שירותים</h2>
+      <p class="lead">כל מה שצריך – בצורה קצרה, מסודרת ומקצועית.</p>
+    </div>
 
     <div class="grid3">
-      <!-- Project 1 -->
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1616161618259-1d9fdbafc7f2?q=80&w=1200&auto=format&fit=crop"
-             alt="EV Charging Parking" style="border-radius:14px;margin-bottom:12px">
-        <h3>חניון בניין משותף</h3>
-        <p>התקנת 6 עמדות טעינה + תשתית עתידית לעוד 10 עמדות.</p>
-        <ul class="list">
-          <li>תכנון עומסים</li>
-          <li>ניהול כבלים נקי</li>
-          <li>מסירה לוועד</li>
-        </ul>
+      <div class="card reveal"><h3>התקנת עמדות טעינה</h3><p>לבית, לעסק, לבניין או לחניון – התקנה מדויקת ונקייה.</p></div>
+      <div class="card reveal"><h3>תשתיות + לוחות</h3><p>שדרוגים, קווים, תעלות, לוחות משנה – לפי צורך אמיתי.</p></div>
+      <div class="card reveal"><h3>בדיקות + תחזוקה</h3><p>תקלות, בדיקות תקינות, חיזוק הגנות ושירות המשך.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="offers" class="section">
+  <div class="wrap">
+    <div class="reveal">
+      <h2>הצעות מחיר</h2>
+      <p class="lead">מחירים שקופים + תהליך קל: משאירים פרטים, מקבלים הצעת מחיר בוואטסאפ.</p>
+    </div>
+
+    <div class="grid3">
+      <div class="card reveal">
+        <div class="priceTop"><h3 style="margin:0">חבילת בית פרטי</h3><div class="priceSmall">החל מ‑₪4,900</div></div>
+        <p style="margin-top:8px">פתרון מהיר ונקי עם התאמה ללוח קיים.</p>
+        <ul class="features"><li>עמדה 7–22kW</li><li>תשתית בסיסית לפי צורך</li><li>בדיקה ומסירה</li></ul>
+        <div style="margin-top:14px"><a class="btn btnPrimary" href="#contact">לקבלת מחיר</a></div>
       </div>
 
-      <!-- Project 2 -->
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?q=80&w=1200&auto=format&fit=crop"
-             alt="Office EV Charging" style="border-radius:14px;margin-bottom:12px">
-        <h3>חברת הייטק – משרדים</h3>
-        <p>עמדות טעינה לעובדים ורכבי חברה.</p>
-        <ul class="list">
-          <li>ניהול פרויקט מלא</li>
-          <li>נראות יוקרתית</li>
-          <li>תחזוקה שוטפת</li>
-        </ul>
+      <div class="card reveal" style="border-color:rgba(0,229,255,.28)">
+        <div class="priceTop"><h3 style="margin:0">חבילת בניין משותף</h3><div class="priceSmall">החל מ‑₪4,900</div></div>
+        <p style="margin-top:8px">תשתית חכמה שמאפשרת להוסיף עוד עמדות בעתיד.</p>
+        <ul class="features"><li>תכנון עומסים</li><li>תשתית לחניון + סדר כבלים</li><li>מסירה מסודרת לוועד</li></ul>
+        <div style="margin-top:14px"><a class="btn btnPrimary" href="#contact">בדיקת התאמה</a></div>
       </div>
 
-      <!-- Project 3 -->
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1615996001375-c7ef13294436?q=80&w=1200&auto=format&fit=crop"
-             alt="Private House EV Charger" style="border-radius:14px;margin-bottom:12px">
-        <h3>בית פרטי – עמדת 22kW</h3>
-        <p>התקנה מהירה ונקייה עם התאמה ללוח קיים.</p>
-        <ul class="list">
-          <li>בדיקות בטיחות</li>
-          <li>הגנות מלאות</li>
-          <li>מסירה מיידית</li>
-        </ul>
+      <div class="card reveal">
+        <div class="priceTop"><h3 style="margin:0">חבילת חברה / עסק</h3><div class="priceSmall">החל מ‑₪4,900</div></div>
+        <p style="margin-top:8px">נראות Enterprise + תהליך עבודה של חברה גדולה.</p>
+        <ul class="features"><li>ניהול פרויקט</li><li>הצעת מחיר מסודרת</li><li>שירות ותחזוקה</li></ul>
+        <div style="margin-top:14px"><a class="btn btnPrimary" href="#contact">דבר איתנו</a></div>
+      </div>
+    </div>
+
+    <div class="card reveal" style="margin-top:14px">
+      <h3 style="margin:0 0 8px">איך מקבלים הצעת מחיר מהירה?</h3>
+      <p style="margin:0;color:var(--muted)">שולחים בוואטסאפ: <b style="color:var(--text)">כתובת + תמונה של הלוח + מרחק לחניה</b>. חוזרים אליך עם הצעת מחיר.</p>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio" class="section">
+  <div class="wrap">
+    <div class="reveal">
+      <h2>פרויקטים (Portfolio)</h2>
+      <p class="lead">כאן תוכל להחליף לתמונות אמיתיות מהעבודות שלך – כרגע יש תמונות דמו יפות.</p>
+    </div>
+
+    <div class="grid3">
+      <div class="card reveal">
+        <img class="portfolioImg" src="assets/images/portfolio-building.png" alt="פרויקט בניין משותף">
+        <h3>בניין משותף</h3>
+        <p>תשתית מוכנה להתרחבות + ניהול כבלים נקי ומסירה מסודרת.</p>
+      </div>
+      <div class="card reveal">
+        <img class="portfolioImg" src="assets/images/portfolio-business.png" alt="פרויקט חברה">
+        <h3>חברה / משרדים</h3>
+        <p>עמדות לעובדים ורכבי חברה – נראות פרימיום שמרשימה לקוחות.</p>
+      </div>
+      <div class="card reveal">
+        <img class="portfolioImg" src="assets/images/portfolio-home.png" alt="פרויקט בית פרטי">
+        <h3>בית פרטי 22kW</h3>
+        <p>התקנה מהירה, בטוחה ומדויקת עם הדרכה ומסירה.</p>
       </div>
     </div>
   </div>
 </section>
 
-  <!-- FAQ -->
-  <section id="faq" class="section">
-    <div class="wrap">
+<section id="faq" class="section">
+  <div class="wrap">
+    <div class="reveal">
       <h2>שאלות נפוצות</h2>
-      <p class="lead">תשובות קצרות וברורות — עוזר לסגור לקוחות מהר.</p>
-
-      <div class="faq">
-        <details>
-          <summary>כמה זמן לוקחת התקנה?</summary>
-          <div class="muted" style="margin-top:8px">בדרך כלל כמה שעות עד יום עבודה — תלוי בתשתית, מרחקים, ותנאי שטח.</div>
-        </details>
-        <details>
-          <summary>אפשר להתקין בבניין משותף?</summary>
-          <div class="muted" style="margin-top:8px">כן. עושים תכנון עומסים + תשתית מסודרת שמאפשרת הוספת עמדות בעתיד.</div>
-        </details>
-        <details>
-          <summary>האם אתם מספקים גם תשתית/לוח/הגנות?</summary>
-          <div class="muted" style="margin-top:8px">כן — כולל שדרוג לוח, מפסקים, הגנות נזילה, ותעלות לפי הצורך.</div>
-        </details>
-        <details>
-          <summary>איך מקבלים הצעת מחיר?</summary>
-          <div class="muted" style="margin-top:8px">שולחים בוואטסאפ כתובת + תמונה של הלוח + מרחק משוער לחניה, ואנחנו חוזרים עם כיוון מחיר/ביקור.</div>
-        </details>
-      </div>
+      <p class="lead">תשובות קצרות שעוזרות ללקוח להחליט מהר.</p>
     </div>
-  </section>
 
-  <!-- Contact -->
-  <section id="contact" class="section">
-    <div class="wrap">
-      <h2>צור קשר / הצעת מחיר</h2>
-      <p class="lead">מלא פרטים ונחזור אליך. (הטופס שולח לוואטסאפ כדי שזה יעבוד בלי שרת).</p>
-
-      <div class="contactGrid">
-        <div class="card">
-          <h3 style="margin:0 0 10px">פרטים מהירים</h3>
-          <p class="muted" style="margin:0 0 12px">זמין לשיחות/וואטסאפ:</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap">
-            <a class="btn btnPrimary" href="tel:+972527004686">📞 התקשר עכשיו</a>
-            <a class="btn" href="https://wa.me/972527004686?text=%D7%A9%D7%9C%D7%95%D7%9D%20Klek%20Charge%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8." target="_blank" rel="noopener">💬 WhatsApp</a>
-          </div>
-          <div style="margin-top:14px" class="muted">
-            <div>📍 אזור שירות: ירושלים והסביבה (עדכן לפי מה שמתאים לך)</div>
-            <div>🕒 זמינות: א׳–ה׳ 08:00–20:00</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3 style="margin:0 0 10px">שלח פרטים</h3>
-          <form id="leadForm">
-            <div class="field">
-              <label class="muted" for="name">שם מלא</label>
-              <input id="name" name="name" placeholder="שם" required />
-            </div>
-            <div class="field">
-              <label class="muted" for="phone">טלפון</label>
-              <input id="phone" name="phone" placeholder="05X-XXXXXXX" required />
-            </div>
-            <div class="field">
-              <label class="muted" for="type">סוג פרויקט</label>
-              <input id="type" name="type" placeholder="בית פרטי / בניין / עסק / חניון" />
-            </div>
-            <div class="field">
-              <label class="muted" for="msg">הודעה</label>
-              <textarea id="msg" name="msg" placeholder="כתוב בקצרה: כתובת, מרחק ללוח, כמה עמדות, וכו׳"></textarea>
-            </div>
-            <button class="btn btnPrimary" type="submit">📩 שלח בוואטסאפ</button>
-            <div class="muted" style="margin-top:10px;font-size:12px">
-              בלחיצה על “שלח” ייפתח וואטסאפ עם הודעה מוכנה.
-            </div>
-          </form>
-        </div>
-      </div>
+    <div style="margin-top:18px" class="reveal">
+      <details><summary>כמה זמן לוקחת התקנה?</summary><div class="faqText">ברוב המקרים כמה שעות עד יום עבודה – תלוי בתשתית ובמרחקים.</div></details>
+      <details><summary>המחיר באמת החל מ‑₪4,900?</summary><div class="faqText">כן. המחיר תלוי במרחק, תשתית קיימת ותנאי שטח. שולחים פרטים בוואטסאפ ומקבלים הצעה מדויקת.</div></details>
+      <details><summary>אפשר להתקין בבניין משותף?</summary><div class="faqText">כן. עושים תכנון עומסים ותשתית שמאפשרת להוסיף עמדות בעתיד.</div></details>
+      <details><summary>מה צריך כדי לקבל הצעת מחיר מהירה?</summary><div class="faqText">כתובת + תמונה של הלוח + מרחק לחניה (בערך). שולחים בוואטסאפ.</div></details>
     </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="wrap" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
-      <div>© <span id="y"></span> Klek Charge. כל הזכויות שמורות.</div>
-      <div class="muted">Built for speed • Mobile-first • RTL</div>
-    </div>
-  </footer>
-
-  <!-- Floating buttons -->
-  <div class="floatBtns" aria-label="Quick actions">
-    <a class="fab wa" href="https://wa.me/972527004686?text=%D7%A9%D7%9C%D7%95%D7%9D%20Klek%20Charge%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%94%D7%AA%D7%A7%D7%A0%D7%AA%20%D7%A2%D7%9E%D7%93%D7%AA%20%D7%98%D7%A2%D7%99%D7%A0%D7%94." target="_blank" rel="noopener">
-      💬 WhatsApp
-      <span class="hideMobile"><small>תגובה מהירה</small></span>
-    </a>
-    <a class="fab call" href="tel:+972527004686">
-      📞 התקשר
-      <span class="hideMobile"><small>052-7004686</small></span>
-    </a>
   </div>
+</section>
 
-  <script>
-    // year
-    document.getElementById('y').textContent = new Date().getFullYear();
+<section id="contact" class="section">
+  <div class="wrap">
+    <div class="reveal">
+      <h2>צור קשר</h2>
+      <p class="lead">ממלאים פרטים וזה יפתח וואטסאפ עם הודעה מוכנה (בלי שרת).</p>
+    </div>
 
-    // mobile menu
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    function closeMenu(){ mobileMenu.style.display = 'none'; }
-    window.closeMenu = closeMenu;
+    <div class="contactGrid">
+      <div class="card reveal">
+        <h3 style="margin:0 0 10px">פרטים מהירים</h3>
+        <p class="lead" style="margin:0 0 12px">זמין לשיחות/וואטסאפ:</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn btnPrimary" href="tel:+972527004686">📞 התקשר עכשיו</a>
+          <a class="btn" target="_blank" rel="noopener"
+             href="https://wa.me/972527004686?text=%D7%A9%D7%9C%D7%95%D7%9D%20Klek%20Charge%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20(%D7%94%D7%97%D7%9C%20%D7%9E-4900).">💬 WhatsApp</a>
+        </div>
+        <div class="note" style="margin-top:14px">
+          📍 אזור שירות: ירושלים והסביבה (עדכן לפי מה שמתאים לך)<br>
+          🕒 זמינות: א׳–ה׳ 08:00–20:00
+        </div>
+      </div>
 
-    menuBtn?.addEventListener('click', () => {
+      <div class="card reveal">
+        <h3 style="margin:0 0 10px">שליחת פרטים לוואטסאפ</h3>
+        <form id="leadForm">
+          <div class="field">
+            <label style="color:var(--muted)" for="name">שם מלא</label>
+            <input id="name" required placeholder="לדוגמה: מגד אבו גוש">
+          </div>
+          <div class="field">
+            <label style="color:var(--muted)" for="phone">טלפון</label>
+            <input id="phone" required placeholder="05X-XXXXXXX">
+          </div>
+          <div class="field">
+            <label style="color:var(--muted)" for="type">סוג פרויקט</label>
+            <input id="type" placeholder="בית / בניין / חברה / חניון">
+          </div>
+          <div class="field">
+            <label style="color:var(--muted)" for="msg">פרטים</label>
+            <textarea id="msg" placeholder="כתובת, מרחק ללוח, כמה עמדות, וכו׳"></textarea>
+          </div>
+          <button class="btn btnPrimary" type="submit">📩 שלח בוואטסאפ</button>
+          <div class="note">בלחיצה על “שלח” ייפתח וואטסאפ עם הודעה מוכנה.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+    <div>© <span id="y"></span> Klek Charge. כל הזכויות שמורות.</div>
+    <div>Elite • Mobile-first • RTL • Fast</div>
+  </div>
+</footer>
+
+<div class="floatBtns" aria-label="Quick actions">
+  <a class="fab wa" target="_blank" rel="noopener"
+     href="https://wa.me/972527004686?text=%D7%A9%D7%9C%D7%95%D7%9D%20Klek%20Charge%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20(%D7%94%D7%97%D7%9C%20%D7%9E-4900).">
+    💬 WhatsApp <small>תגובה מהירה</small>
+  </a>
+  <a class="fab call" href="tel:+972527004686">
+    📞 התקשר <small>052-7004686</small>
+  </a>
+</div>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  function closeMenu(){ mobileMenu.style.display = 'none'; }
+  window.closeMenu = closeMenu;
+  if(menuBtn){
+    menuBtn.addEventListener('click', function(){
       mobileMenu.style.display = (mobileMenu.style.display === 'none' || !mobileMenu.style.display) ? 'block' : 'none';
     });
+  }
 
-    // WhatsApp lead form (no backend needed)
-    document.getElementById('leadForm').addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = encodeURIComponent(document.getElementById('name').value.trim());
-      const phone = encodeURIComponent(document.getElementById('phone').value.trim());
-      const type = encodeURIComponent(document.getElementById('type').value.trim());
-      const msg  = encodeURIComponent(document.getElementById('msg').value.trim());
-
-      const text =
-        `שלום, אני ${decodeURIComponent(name)}.%0A` +
-        `טלפון: ${decodeURIComponent(phone)}%0A` +
-        (type ? `סוג פרויקט: ${decodeURIComponent(type)}%0A` : '') +
-        (msg ? `פרטים: ${decodeURIComponent(msg)}%0A` : '') +
-        `%0Aאשמח להצעת מחיר.`;
-
-      const url = `https://wa.me/972527004686?text=${text}`;
-      window.open(url, '_blank', 'noopener');
+  const io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting) e.target.classList.add('show');
     });
-  </script>
+  }, {threshold: .14});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  document.getElementById('leadForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const type = document.getElementById('type').value.trim();
+    const msg  = document.getElementById('msg').value.trim();
+
+    var lines = [];
+    lines.push("שלום, אני " + name + ".");
+    lines.push("טלפון: " + phone + ".");
+    if(type) lines.push("סוג פרויקט: " + type + ".");
+    if(msg)  lines.push("פרטים: " + msg);
+    lines.push("");
+    lines.push("אשמח להצעת מחיר (החל מ-₪4,900).");
+
+    var url = "https://wa.me/972527004686?text=" + encodeURIComponent(lines.join("\n"));
+    window.open(url, "_blank", "noopener");
+  });
+</script>
+
 </body>
 </html>
