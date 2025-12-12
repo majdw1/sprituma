@@ -1,244 +1,721 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NOVAX Marketing - יותר לידים. יותר לקוחות. יותר צמיחה.</title>
-  <meta name="description" content="NOVAX Marketing - פתרונות שיווק חכמים לעסקים בישראל המבוססים על בינה מלאכותית." />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Klek Charge | התקנת עמדות טעינה לרכבים חשמליים לעסקים, בניינים ובתים</title>
+  <meta name="description" content="Klek Charge – התקנת עמדות טעינה לרכבים חשמליים לעסקים, חניונים, בניינים ובתים. ייעוץ, תשתיות, אישורים, התקנה ותחזוקה – הכל במקום אחד." />
+  <meta name="theme-color" content="#0b0f1a" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Klek Charge | EV Charging Solutions" />
+  <meta property="og:description" content="פתרונות טעינה לחברות, חניונים, בניינים ובתים – תכנון, תשתיות, התקנה ותחזוקה." />
+  <meta property="og:type" content="website" />
+
+  <!-- Simple, fast CSS (no frameworks) -->
+  <style>
+    :root{
+      --bg:#070a12;
+      --card:#0b1020;
+      --card2:#0a1228;
+      --text:#e9f0ff;
+      --muted:#a9b4d0;
+      --line:rgba(255,255,255,.08);
+      --brand:#7c5cff;
+      --brand2:#00e5ff;
+      --ok:#3ef2a1;
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius:18px;
+      --radius2:24px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 15% 10%, rgba(124,92,255,.20), transparent 60%),
+        radial-gradient(900px 500px at 85% 20%, rgba(0,229,255,.15), transparent 55%),
+        radial-gradient(900px 600px at 50% 100%, rgba(62,242,161,.08), transparent 60%),
+        var(--bg);
+      line-height:1.55;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+    .topbar{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter: blur(12px);
+      background: rgba(7,10,18,.72);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:14px 0;
+      gap:12px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:12px;min-width:190px;
+    }
+    .logo{
+      width:44px;height:44px;border-radius:14px;
+      background:
+        radial-gradient(14px 14px at 30% 30%, rgba(255,255,255,.25), transparent 70%),
+        linear-gradient(135deg, rgba(124,92,255,.95), rgba(0,229,255,.8));
+      box-shadow: 0 14px 40px rgba(124,92,255,.22);
+      position:relative; overflow:hidden;
+    }
+    .logo:after{
+      content:""; position:absolute; inset:-20%;
+      background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.25), transparent 65%);
+      transform: rotate(20deg);
+      animation: shine 6s ease-in-out infinite;
+    }
+    @keyframes shine{
+      0%,35%{transform:translateX(-40%) rotate(20deg);opacity:.0}
+      45%{opacity:.35}
+      70%{transform:translateX(55%) rotate(20deg);opacity:.0}
+      100%{opacity:0}
+    }
+    .brand h1{margin:0;font-size:15px;letter-spacing:.2px}
+    .brand p{margin:0;color:var(--muted);font-size:12px}
+    .menu{display:flex;gap:18px;align-items:center}
+    .menu a{color:var(--muted);font-size:14px}
+    .menu a:hover{color:var(--text)}
+    .ctaRow{display:flex;gap:10px;align-items:center}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      gap:10px;
+      padding:10px 14px;border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      box-shadow: 0 10px 24px rgba(0,0,0,.25);
+      transition:transform .15s ease, background .15s ease, border-color .15s ease;
+      font-weight:600;font-size:14px;
+      user-select:none;
+    }
+    .btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14)}
+    .btnPrimary{
+      border-color: transparent;
+      background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(0,229,255,.85));
+      color:#081022;
+    }
+    .btnPrimary:hover{transform:translateY(-1px) scale(1.01)}
+    .btnSmall{padding:9px 12px;border-radius:13px;font-size:13px}
+    .hamburger{display:none}
+    .hero{
+      padding:46px 0 22px;
+    }
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    .badge{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:8px 12px;border-radius:999px;
+      background: rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      color:var(--muted);
+      font-size:13px;
+      width:max-content;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:999px;background:var(--ok);
+      box-shadow: 0 0 24px rgba(62,242,161,.55);
+    }
+    .headline{margin:14px 0 10px;font-size:40px;line-height:1.12}
+    .sub{margin:0;color:var(--muted);font-size:16px;max-width:60ch}
+    .heroActions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+    .trust{
+      display:flex;gap:14px;flex-wrap:wrap;margin-top:18px;color:var(--muted);font-size:13px
+    }
+    .trust .pill{
+      padding:8px 10px;border-radius:999px;border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+    }
+    .heroCard{
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+      min-height: 420px;
+    }
+    .heroCard:before{
+      content:"";position:absolute;inset:0;
+      background:
+        radial-gradient(600px 240px at 65% 18%, rgba(0,229,255,.14), transparent 60%),
+        radial-gradient(420px 280px at 30% 38%, rgba(124,92,255,.16), transparent 60%),
+        radial-gradient(520px 320px at 50% 90%, rgba(62,242,161,.10), transparent 60%);
+      pointer-events:none;
+    }
+    .heroCardInner{position:relative;padding:18px}
+    .bigStat{
+      display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;
+    }
+    .stat{
+      border:1px solid var(--line);
+      background: rgba(7,10,18,.35);
+      border-radius:16px;padding:14px;
+    }
+    .stat b{display:block;font-size:18px}
+    .stat span{display:block;color:var(--muted);font-size:12px;margin-top:4px}
+    .mock{
+      margin-top:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(11,16,32,.65), rgba(7,10,18,.55));
+      border-radius:18px;
+      padding:14px;
+    }
+    .mockRow{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    .chip{
+      padding:8px 10px;border-radius:999px;
+      background: rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      color:var(--muted);font-size:12px;
+    }
+    .section{padding:44px 0}
+    .section h2{margin:0 0 10px;font-size:28px}
+    .section p.lead{margin:0;color:var(--muted);max-width:70ch}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+    .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px}
+    .card{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius: var(--radius);
+      padding:16px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.25);
+    }
+    .card h3{margin:0 0 8px;font-size:16px}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+    .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+    .kpi{padding:14px;border-radius:16px;border:1px solid var(--line);background: rgba(7,10,18,.30)}
+    .kpi b{display:block;font-size:20px}
+    .kpi span{display:block;color:var(--muted);font-size:12px;margin-top:4px}
+    .projects{margin-top:18px}
+    .project{
+      display:flex;gap:14px;align-items:flex-start;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+      border-radius:18px;padding:16px;
+    }
+    .icon{
+      width:42px;height:42px;border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background: linear-gradient(135deg, rgba(124,92,255,.25), rgba(0,229,255,.15));
+      display:flex;align-items:center;justify-content:center;
+      box-shadow: 0 12px 40px rgba(0,0,0,.28);
+      flex:0 0 auto;
+    }
+    .icon svg{opacity:.95}
+    .muted{color:var(--muted)}
+    .list{margin:10px 0 0;padding:0 18px;color:var(--muted);font-size:14px}
+    .list li{margin:6px 0}
+    .faq{margin-top:14px}
+    details{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+      border-radius:16px;
+      padding:12px 14px;
+    }
+    details+details{margin-top:10px}
+    summary{cursor:pointer;font-weight:700}
+    summary::-webkit-details-marker{display:none}
+    .contactGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+    .field{display:flex;flex-direction:column;gap:8px;margin-bottom:10px}
+    input, textarea{
+      width:100%;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(7,10,18,.45);
+      color:var(--text);
+      padding:12px 12px;
+      font-size:14px;
+      outline:none;
+    }
+    input:focus, textarea:focus{border-color: rgba(0,229,255,.35)}
+    textarea{min-height:120px;resize:vertical}
+    .footer{
+      padding:24px 0 34px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:13px;
+    }
+    .floatBtns{
+      position:fixed;
+      left:14px;
+      bottom:14px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      z-index:100;
+    }
+    .fab{
+      display:flex;align-items:center;gap:10px;
+      padding:12px 14px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(7,10,18,.80);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 16px 40px rgba(0,0,0,.45);
+      font-weight:800;
+    }
+    .fab:hover{transform:translateY(-1px)}
+    .fab small{display:block;font-weight:600;color:var(--muted);font-size:11px}
+    .wa{border-color: rgba(62,242,161,.30)}
+    .call{border-color: rgba(0,229,255,.30)}
+    .hideMobile{display:block}
+    .showMobile{display:none}
+
+    /* Mobile */
+    @media (max-width: 920px){
+      .heroGrid{grid-template-columns:1fr}
+      .headline{font-size:34px}
+      .kpis{grid-template-columns:repeat(2,1fr)}
+      .grid3{grid-template-columns:1fr}
+      .grid2{grid-template-columns:1fr}
+      .contactGrid{grid-template-columns:1fr}
+      .menu{display:none}
+      .hamburger{display:inline-flex}
+      .hideMobile{display:none}
+      .showMobile{display:block}
+      .heroCard{min-height: unset}
+    }
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+      .logo:after{animation:none}
+      .btn, .fab{transition:none}
+    }
+  </style>
+
+  <!-- LocalBusiness schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Klek Charge",
+    "description":"התקנת עמדות טעינה לרכבים חשמליים לעסקים, חניונים, בניינים ובתים.",
+    "areaServed":"IL",
+    "telephone":"+972527004686",
+    "url":"https://example.com",
+    "sameAs":[]
+  }
+  </script>
 </head>
+
 <body>
-  <header class="main-header">
-    <div class="container header-inner">
-      <div class="logo-wrap">
-        <!-- ضع هنا ملف اللوجو الذهبي الرسمي كـ novax-logo.png -->
-        <div class="nav-logo">
-        <img src="assets/novax-logo.png" alt="NOVAX">
-    </div>
+  <!-- Top Bar -->
+  <header class="topbar">
+    <div class="wrap">
+      <nav class="nav">
+        <a class="brand" href="#top" aria-label="Klek Charge Home">
+          <span class="logo" aria-hidden="true"></span>
+          <span>
+            <h1>Klek Charge</h1>
+            <p>EV Charging • תכנון • תשתיות • התקנה • תחזוקה</p>
+          </span>
+        </a>
 
-       
+        <div class="menu" aria-label="Primary navigation">
+          <a href="#services">שירותים</a>
+          <a href="#projects">פתרונות לחברות</a>
+          <a href="#process">תהליך עבודה</a>
+          <a href="#faq">שאלות נפוצות</a>
+          <a href="#contact">צור קשר</a>
+        </div>
+
+        <div class="ctaRow">
+          <a class="btn btnSmall hideMobile" href="tel:+972527004686">📞 052-7004686</a>
+          <a class="btn btnPrimary" href="#contact">קבל הצעת מחיר</a>
+          <button class="btn btnSmall hamburger" id="menuBtn" aria-label="Open menu">☰</button>
+        </div>
+      </nav>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" style="display:none;padding:0 0 14px;">
+        <div class="card" style="padding:12px;">
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <a class="btn" href="#services" onclick="closeMenu()">שירותים</a>
+            <a class="btn" href="#projects" onclick="closeMenu()">פתרונות לחברות</a>
+            <a class="btn" href="#process" onclick="closeMenu()">תהליך עבודה</a>
+            <a class="btn" href="#faq" onclick="closeMenu()">שאלות נפוצות</a>
+            <a class="btn btnPrimary" href="#contact" onclick="closeMenu()">קבל הצעת מחיר</a>
+            <a class="btn" href="tel:+972527004686" onclick="closeMenu()">📞 052-7004686</a>
+          </div>
+        </div>
       </div>
-      <nav class="main-nav" id="mainNav">
 
-    <a href="#services">שירותים</a>
-    <a href="#process">איך זה עובד</a>
-    <a href="#portfolio">עבודות</a>
-    <a href="#about">למה NOVAX</a>
-    <a href="#contact" class="nav-cta">דברו איתנו</a>
-
-</nav>
-
-    
-
-      <button class="nav-toggle" id="navToggle" aria-label="פתח תפריט">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </header>
 
-  <main>
-   
-<div class="hero" style="position:relative; width:100%; height:100vh; background:url('assets/hero-bg.png') center/cover no-repeat;">
-  <div class="hero-content" style="position:absolute; top:50%; right:8%; transform:translateY(-50%); color:#f0c26a; max-width:480px;">
-    <h1 class="hero-title" style="font-size:3rem; font-weight:800; line-height:1.2; margin-bottom:20px;">
-      יותר לידים<br>יותר לקוחות<br>יותר צמיחה
-    </h1>
-    <p class="hero-sub" style="font-size:1.2rem; margin-bottom:30px;">
-      פתרונות שיווק חכמים המבוססים על בינה מלאכותית — מותאם אישית לעסקים בישראל.
-    </p>
-    <a href="https://wa.me/972527004686" target="_blank" class="whatsapp-btn" style="display:inline-block; background:linear-gradient(90deg,#e7c166,#cfa14a); padding:16px 28px; border-radius:12px; font-size:1.1rem; font-weight:700; text-decoration:none; color:#1d1a16;">
-      דברו איתנו בוואטסאפ
-    </a>
-  </div>
-</div>
+  <!-- Hero -->
+  <main id="top" class="hero">
+    <div class="wrap">
+      <div class="heroGrid">
+        <section>
+          <div class="badge"><span class="dot"></span> זמינות מהירה • עבודה לפי תקן • דגש על בטיחות</div>
+          <h2 class="headline">פתרונות טעינה לרכבים חשמליים<br/>שנראים כמו <span style="background:linear-gradient(135deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent;">חברה גדולה</span></h2>
+          <p class="sub">
+            התקנה מקצועית לעסקים, חניונים, בניינים ובתים פרטיים: תכנון עומסים, תשתיות, לוחות, עמדות 7–22kW, הגנות ובדיקות – עם שירות ברור ומסודר.
+          </p>
 
-
-    
-
-    
-    <section class="section" id="services">
-      <div class="container">
-        <div class="section-header">
-          <h2>שירותי הליבה שלנו</h2>
-          <p>בונים עבורכם מערכת שיווק מלאה – מקצה לקצה.</p>
-        </div>
-        <div class="grid services-grid">
-          <article class="card service-card">
-            <h3>דפי נחיתה ממירים</h3>
-            <p>בניית דפי נחיתה חכמים עם חוויית משתמש חדה ומעקב אחרי כל קליק.</p>
-            <ul>
-              <li>UX מותאם לקהל הישראלי</li>
-              <li>חיבור לטפסים ו-CRM</li>
-              <li>טעינה מהירה ומותאם למובייל</li>
-            </ul>
-          </article>
-
-          <article class="card service-card">
-            <h3>קמפיינים בגוגל ובמטא</h3>
-            <p>ניהול קמפיינים ממוקדים עם למידת מכונה ואופטימיזציה יומית.</p>
-            <ul>
-              <li>Google Ads &amp; Meta Ads</li>
-              <li>איתור קהלי יעד רווחיים</li>
-              <li>דוחות ברורים בשפה פשוטה</li>
-            </ul>
-          </article>
-
-          <article class="card service-card">
-            <h3>אתרים תדמיתיים &amp; תפקודיים</h3>
-            <p>בניית אתרים מהירים, יוקרתיים ונקיים שמדברים שפה של High-Tech.</p>
-            <ul>
-              <li>Branding UX/UI מלא</li>
-              <li>מותאם SEO</li>
-              <li>מותאם לכל מסך</li>
-            </ul>
-          </article>
-
-          <article class="card service-card">
-            <h3>אוטומציות ו-AI</h3>
-            <p>בוטים, צ'אטבוטים ו-Automation שחוסכים זמן וסוגרים יותר לקוחות.</p>
-            <ul>
-              <li>בוטי וואטסאפ חכמים</li>
-              <li>ניקוד לידים אוטומטי</li>
-              <li>חיבורים ל-CRM / Google Sheets</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROCESS -->
-    <section class="section muted" id="process">
-      <div class="container">
-        <div class="section-header">
-          <h2>איך זה עובד?</h2>
-          <p>תהליך חד וברור – בלי כאבי ראש.</p>
-        </div>
-        <ol class="process-steps">
-          <li>
-            <h3>01 · שיחת התאמה</h3>
-            <p>מבינים את העסק שלכם, היעדים שלכם והקהל שלכם.</p>
-          </li>
-          <li>
-            <h3>02 · בניית אסטרטגיה</h3>
-            <p>מגדירים הצעה חדה, מסרים יצירתיים וערוצי פרסום מדויקים.</p>
-          </li>
-          <li>
-            <h3>03 · הקמה ותכנון קריאייטיב</h3>
-            <p>בונים דפי נחיתה, קמפיינים, קופי, ויז'ואלים ואוטומציות.</p>
-          </li>
-          <li>
-            <h3>04 · אופטימיזציה וסקייל</h3>
-            <p>מודדים, משפרים ומגדילים תקציבים רק איפה שזה עובד.</p>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- PORTFOLIO -->
-    <section class="section" id="portfolio">
-      <div class="container">
-        <div class="section-header">
-          <h2>עבודות נבחרות</h2>
-          <p>טעימה קטנה – הפרויקטים המלאים אצלכם בשיחה.</p>
-        </div>
-        <div class="grid portfolio-grid">
-          <div class="portfolio-card">
-            <span class="pill">Google Ads</span>
-            <h3>קליניקה פרטית</h3>
-            <p>גידול של 320% בלידים רלוונטיים תוך 60 יום.</p>
+          <div class="heroActions">
+            <a class="btn btnPrimary" href="#contact">✅ הצעת מחיר חינם</a>
+            <a class="btn" href="#projects">לפתרונות לחברות</a>
+            <a class="btn" href="https://wa.me/972527004686?text=%D7%A9%D7%9C%D7%95%D7%9D%20Klek%20Charge%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%94%D7%AA%D7%A7%D7%A0%D7%AA%20%D7%A2%D7%9E%D7%93%D7%AA%20%D7%98%D7%A2%D7%99%D7%A0%D7%94." target="_blank" rel="noopener">💬 WhatsApp</a>
           </div>
-          <div class="portfolio-card">
-            <span class="pill">Landing Page</span>
-            <h3>חברת התקנת עמדות טעינה</h3>
-            <p>ממוצע של 37 לידים בחודש בעלות נמוכה.</p>
-          </div>
-          <div class="portfolio-card">
-            <span class="pill">Social &amp; Branding</span>
-            <h3>עסק מקומי לשיפוצים</h3>
-            <p>מיתוג חדש + נוכחות דיגיטלית מלאה.</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ABOUT -->
-    <section class="section muted" id="about">
-      <div class="container about-grid">
-        <div>
-          <div class="section-header small">
-            <h2>למה NOVAX?</h2>
-            <p>לא עוד "עוד סוכנות". שותף אסטרטגי לצמיחה.</p>
+          <div class="trust">
+            <span class="pill">⚡ עמדות 7–22kW</span>
+            <span class="pill">🏢 לעסקים ובניינים</span>
+            <span class="pill">🧰 תשתיות ולוחות</span>
+            <span class="pill">🛡️ פתרונות בטיחות והגנות</span>
           </div>
-          <ul class="bullet-list">
-            <li><strong>פוקוס על תוצאות, לא על קליקים.</strong></li>
-            <li><strong>שילוב בין קריאייטיב אנושי לבינה מלאכותית.</strong></li>
-            <li><strong>שקיפות מלאה בדוחות ובתקציבים.</strong></li>
-            <li><strong>זמינות גבוהה ויחס אישי.</strong></li>
-          </ul>
-        </div>
-        <div class="about-highlight">
-          <p class="about-label">מוכנים לשלב הבא?</p>
-          <h3>בואו נבנה מערכת לידים שעובדת בשבילכם 24/7.</h3>
-          <a href="https://wa.me/972501234567" target="_blank" class="btn primary wide">
-            שלחו לנו הודעה בוואטסאפ
-          </a>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- CONTACT -->
-    <section class="section" id="contact">
-      <div class="container contact-grid">
-        <div>
-          <div class="section-header small">
-            <h2>דברו איתנו</h2>
-            <p>כמה פרטים קצרים – ונחזור אליכם עם כיוון ברור.</p>
-          </div>
-          <form class="contact-form" onsubmit="return handleForm(event)">
-            <div class="field">
-              <label for="name">שם מלא</label>
-              <input id="name" name="name" required placeholder="ישראל ישראלי" />
+        <aside class="heroCard" aria-label="Highlights card">
+          <div class="heroCardInner">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
+              <div class="badge" style="margin:0"><span class="dot" style="background:var(--brand2)"></span> Corporate-grade Execution</div>
+              <a class="btn btnSmall" href="#contact">לבדיקת התאמה</a>
             </div>
-            <div class="field">
-              <label for="phone">טלפון</label>
-              <input id="phone" name="phone" required placeholder="05X-XXXXXXX" />
+
+            <div class="bigStat">
+              <div class="stat">
+                <b>תכנון עומסים</b>
+                <span>התאמה לתשתית + הרחבות עתידיות</span>
+              </div>
+              <div class="stat">
+                <b>התקנה נקייה</b>
+                <span>מראה יוקרתי בחניון/קיר/עמוד</span>
+              </div>
+              <div class="stat">
+                <b>ניהול כבלים</b>
+                <span>סדר, בטיחות, ונוחות שימוש</span>
+              </div>
+              <div class="stat">
+                <b>בדיקות והגנות</b>
+                <span>תקן, מפסקים, הגנות נזילה</span>
+              </div>
             </div>
-            <div class="field">
-              <label for="business">שם העסק</label>
-              <input id="business" name="business" placeholder="שם העסק שלכם" />
+
+            <div class="mock">
+              <div class="mockRow">
+                <span class="chip">🏗️ פרויקטים לבניינים</span>
+                <span class="chip">🏢 פתרונות לחברות</span>
+                <span class="chip">🚗 חניונים</span>
+                <span class="chip">🏠 בית פרטי</span>
+              </div>
+              <div style="margin-top:12px;color:var(--muted);font-size:13px">
+                ✅ עבודה מסודרת עם מסמכים, הצעות מחיר ברורות, וליווי עד מסירה.
+              </div>
             </div>
-            <div class="field">
-              <label for="message">מה הייתם רוצים לשפר בשיווק?</label>
-              <textarea id="message" name="message" rows="4" placeholder="יותר לידים, יותר מכירות, אתר חדש..."></textarea>
-            </div>
-            <button type="submit" class="btn primary wide">שלחו פרטים</button>
-            <p class="form-note">*הטופס דמו בלבד – התאימו אותו בהמשך למערכת הלידים שלכם.</p>
-          </form>
-        </div>
-        <div class="contact-side">
-          <div class="contact-card">
-            <h3>פרטים מהירים</h3>
-            <p><strong>וואטסאפ:</strong> 05X-XXXXXXX</p>
-            <p><strong>אימייל:</strong> info@novax-marketing.com</p>
-            <p><strong>איזור פעילות:</strong> כל ישראל + און-ליין</p>
+
           </div>
-        </div>
+        </aside>
       </div>
-    </section>
+    </div>
   </main>
 
-  <footer class="main-footer">
-    <div class="container footer-inner">
-      <p>© 2025 NOVAX Marketing — כל הזכויות שמורות.</p>
-      <p class="footer-small">נבנה באהבה, פוקוס ותוצאות.</p>
+  <!-- Services -->
+  <section id="services" class="section">
+    <div class="wrap">
+      <h2>שירותים</h2>
+      <p class="lead">כל מה שצריך כדי להקים טעינה אמינה ומהירה — בצורה מקצועית שמכבדת עסקים ולקוחות.</p>
+
+      <div class="grid3">
+        <div class="card">
+          <h3>התקנת עמדות טעינה 7–22kW</h3>
+          <p>התקנה לבית, עסק, משרד וחניון – כולל התאמת תשתית, נקודות חשמל והגנות.</p>
+        </div>
+        <div class="card">
+          <h3>תשתיות לחניונים ובניינים</h3>
+          <p>תכנון קווים, תעלות, לוחות משנה, חלוקת עומסים, והכנה להתרחבות עתידית.</p>
+        </div>
+        <div class="card">
+          <h3>בדיקות, בטיחות ותחזוקה</h3>
+          <p>בדיקות תקינות, שדרוג הגנות, פתרון תקלות, ותחזוקה שוטפת למערכות קיימות.</p>
+        </div>
+      </div>
+
+      <div class="kpis">
+        <div class="kpi"><b>⚡ מהיר</b><span>זמינות ומהירות ביצוע</span></div>
+        <div class="kpi"><b>🛡️ בטוח</b><span>עבודה לפי סטנדרט גבוה</span></div>
+        <div class="kpi"><b>📄 מסודר</b><span>הצעת מחיר + מסירה נקייה</span></div>
+        <div class="kpi"><b>🏢 עסקי</b><span>נראות שמתאימה לחברות</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Corporate Solutions / Projects -->
+  <section id="projects" class="section">
+    <div class="wrap">
+      <h2>פתרונות לחברות, בניינים וחניונים</h2>
+      <p class="lead">הדגש הוא על תוצאה שנראית “Enterprise”: תכנון, סדר, בטיחות, וניהול פרויקט.</p>
+
+      <div class="projects grid2">
+        <div class="project">
+          <div class="icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M4 20V10a2 2 0 0 1 2-2h3V6a2 2 0 0 1 2-2h5a2 2 0 0 1 2 2v14" stroke="white" stroke-opacity=".9" stroke-width="1.6"/>
+              <path d="M8 20v-6h8v6" stroke="white" stroke-opacity=".9" stroke-width="1.6"/>
+            </svg>
+          </div>
+          <div>
+            <h3 style="margin:0">בניינים משותפים</h3>
+            <p class="muted" style="margin:6px 0 0">תשתית חכמה ליותר מעמדה אחת, חלוקת עומסים, והכנה להתרחבות.</p>
+            <ul class="list">
+              <li>תכנון עומסים + פתרונות הגנה</li>
+              <li>הכנת תשתית נקייה בחניון</li>
+              <li>מסירה מסודרת לוועד/חברה</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M3 7h18v10H3z" stroke="white" stroke-opacity=".9" stroke-width="1.6"/>
+              <path d="M7 17v3h10v-3" stroke="white" stroke-opacity=".9" stroke-width="1.6"/>
+              <path d="M8 10h8" stroke="white" stroke-opacity=".9" stroke-width="1.6"/>
+            </svg>
+          </div>
+          <div>
+            <h3 style="margin:0">חברות ומשרדים</h3>
+            <p class="muted" style="margin:6px 0 0">עמדות לעובדים/רכבי חברה, תיעוד ברור, וניהול התקנה בשטח.</p>
+            <ul class="list">
+              <li>ניהול פרויקט ועמידה בזמנים</li>
+              <li>אסתטיקה גבוהה (נראות)</li>
+              <li>תחזוקה ותמיכה לאחר התקנה</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M5 16h14l-1-6H6l-1 6Z" stroke="white" stroke-opacity=".9" stroke-width="1.6"/>
+              <path d="M8 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z" stroke="white" stroke-opacity=".9" stroke-width="1.6"/>
+              <path d="M16 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z" stroke="white" stroke-opacity=".9" stroke-width="1.6"/>
+            </svg>
+          </div>
+          <div>
+            <h3 style="margin:0">חניונים מסחריים</h3>
+            <p class="muted" style="margin:6px 0 0">סידור תעלות/כבלים, תיוג, והכנה לריבוי עמדות.</p>
+            <ul class="list">
+              <li>פתרונות תשתית תעשייתיים</li>
+              <li>סדר וניהול כבלים</li>
+              <li>תכנון לשדרוג עתידי</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2v8" stroke="white" stroke-opacity=".9" stroke-width="1.6"/>
+              <path d="M9 10h6l-3 12-3-12Z" stroke="white" stroke-opacity=".9" stroke-width="1.6"/>
+              <path d="M6 10h12" stroke="white" stroke-opacity=".9" stroke-width="1.6"/>
+            </svg>
+          </div>
+          <div>
+            <h3 style="margin:0">בית פרטי</h3>
+            <p class="muted" style="margin:6px 0 0">התקנה נקייה ומהירה עם התאמה ללוח ולתשתית הבית.</p>
+            <ul class="list">
+              <li>חיווט מסודר והגנות</li>
+              <li>מיקום חכם ונוח</li>
+              <li>בדיקה ומסירה</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="process" class="section">
+    <div class="wrap">
+      <h2>תהליך עבודה מסודר</h2>
+      <p class="lead">ככה נראה תהליך של “חברה גדולה”: קצר, ברור, ומגובה בבדיקות.</p>
+
+      <div class="grid3">
+        <div class="card">
+          <h3>1) אבחון ותכנון</h3>
+          <p>שיחת אפיון + בדיקה בשטח: תשתית, לוח, מרחקים, תעלות, עומסים, והיתכנות.</p>
+        </div>
+        <div class="card">
+          <h3>2) הצעת מחיר ברורה</h3>
+          <p>הצעת מחיר מסודרת הכוללת חומרים, עבודה, אחריות, ולו״ז ביצוע.</p>
+        </div>
+        <div class="card">
+          <h3>3) התקנה ומסירה</h3>
+          <p>התקנה נקייה, בדיקות בטיחות, הדרכה ללקוח, ומסירה מסודרת.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social proof -->
+  <section class="section">
+    <div class="wrap">
+      <h2>לקוחות מרוצים (דוגמא לנראות)</h2>
+      <p class="lead">ضع هنا شهادات حقيقية لاحقاً. أنا عامل التصميم جاهز.</p>
+
+      <div class="grid3">
+        <div class="card">
+          <h3>“ביצוע נקי ומדויק”</h3>
+          <p>התקנה בחניון בניין – עבודה מסודרת, יחס מקצועי, והכל בזמן.</p>
+          <p class="muted" style="margin-top:10px">— ועד בית, ירושלים</p>
+        </div>
+        <div class="card">
+          <h3>“נראות ברמה גבוהה”</h3>
+          <p>פתרון לעסק עם מספר עמדות — נראה כמו סטנדרט של חברה גדולה.</p>
+          <p class="muted" style="margin-top:10px">— מנהל תפעול, חברה פרטית</p>
+        </div>
+        <div class="card">
+          <h3>“שירות מהיר”</h3>
+          <p>זמינות מעולה + הסבר ברור. מומלץ.</p>
+          <p class="muted" style="margin-top:10px">— לקוח פרטי</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="wrap">
+      <h2>שאלות נפוצות</h2>
+      <p class="lead">תשובות קצרות וברורות — עוזר לסגור לקוחות מהר.</p>
+
+      <div class="faq">
+        <details>
+          <summary>כמה זמן לוקחת התקנה?</summary>
+          <div class="muted" style="margin-top:8px">בדרך כלל כמה שעות עד יום עבודה — תלוי בתשתית, מרחקים, ותנאי שטח.</div>
+        </details>
+        <details>
+          <summary>אפשר להתקין בבניין משותף?</summary>
+          <div class="muted" style="margin-top:8px">כן. עושים תכנון עומסים + תשתית מסודרת שמאפשרת הוספת עמדות בעתיד.</div>
+        </details>
+        <details>
+          <summary>האם אתם מספקים גם תשתית/לוח/הגנות?</summary>
+          <div class="muted" style="margin-top:8px">כן — כולל שדרוג לוח, מפסקים, הגנות נזילה, ותעלות לפי הצורך.</div>
+        </details>
+        <details>
+          <summary>איך מקבלים הצעת מחיר?</summary>
+          <div class="muted" style="margin-top:8px">שולחים בוואטסאפ כתובת + תמונה של הלוח + מרחק משוער לחניה, ואנחנו חוזרים עם כיוון מחיר/ביקור.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="wrap">
+      <h2>צור קשר / הצעת מחיר</h2>
+      <p class="lead">מלא פרטים ונחזור אליך. (הטופס שולח לוואטסאפ כדי שזה יעבוד בלי שרת).</p>
+
+      <div class="contactGrid">
+        <div class="card">
+          <h3 style="margin:0 0 10px">פרטים מהירים</h3>
+          <p class="muted" style="margin:0 0 12px">זמין לשיחות/וואטסאפ:</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn btnPrimary" href="tel:+972527004686">📞 התקשר עכשיו</a>
+            <a class="btn" href="https://wa.me/972527004686?text=%D7%A9%D7%9C%D7%95%D7%9D%20Klek%20Charge%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8." target="_blank" rel="noopener">💬 WhatsApp</a>
+          </div>
+          <div style="margin-top:14px" class="muted">
+            <div>📍 אזור שירות: ירושלים והסביבה (עדכן לפי מה שמתאים לך)</div>
+            <div>🕒 זמינות: א׳–ה׳ 08:00–20:00</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin:0 0 10px">שלח פרטים</h3>
+          <form id="leadForm">
+            <div class="field">
+              <label class="muted" for="name">שם מלא</label>
+              <input id="name" name="name" placeholder="שם" required />
+            </div>
+            <div class="field">
+              <label class="muted" for="phone">טלפון</label>
+              <input id="phone" name="phone" placeholder="05X-XXXXXXX" required />
+            </div>
+            <div class="field">
+              <label class="muted" for="type">סוג פרויקט</label>
+              <input id="type" name="type" placeholder="בית פרטי / בניין / עסק / חניון" />
+            </div>
+            <div class="field">
+              <label class="muted" for="msg">הודעה</label>
+              <textarea id="msg" name="msg" placeholder="כתוב בקצרה: כתובת, מרחק ללוח, כמה עמדות, וכו׳"></textarea>
+            </div>
+            <button class="btn btnPrimary" type="submit">📩 שלח בוואטסאפ</button>
+            <div class="muted" style="margin-top:10px;font-size:12px">
+              בלחיצה על “שלח” ייפתח וואטסאפ עם הודעה מוכנה.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="wrap" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div>© <span id="y"></span> Klek Charge. כל הזכויות שמורות.</div>
+      <div class="muted">Built for speed • Mobile-first • RTL</div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Floating buttons -->
+  <div class="floatBtns" aria-label="Quick actions">
+    <a class="fab wa" href="https://wa.me/972527004686?text=%D7%A9%D7%9C%D7%95%D7%9D%20Klek%20Charge%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%94%D7%AA%D7%A7%D7%A0%D7%AA%20%D7%A2%D7%9E%D7%93%D7%AA%20%D7%98%D7%A2%D7%99%D7%A0%D7%94." target="_blank" rel="noopener">
+      💬 WhatsApp
+      <span class="hideMobile"><small>תגובה מהירה</small></span>
+    </a>
+    <a class="fab call" href="tel:+972527004686">
+      📞 התקשר
+      <span class="hideMobile"><small>052-7004686</small></span>
+    </a>
+  </div>
 
-  <a href="https://wa.me/972527004686" target="_blank" class="whatsapp-floating">
-    <img src="assets/whatsapp-gold.png" alt="WhatsApp">
-  </a>
+  <script>
+    // year
+    document.getElementById('y').textContent = new Date().getFullYear();
 
+    // mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    function closeMenu(){ mobileMenu.style.display = 'none'; }
+    window.closeMenu = closeMenu;
+
+    menuBtn?.addEventListener('click', () => {
+      mobileMenu.style.display = (mobileMenu.style.display === 'none' || !mobileMenu.style.display) ? 'block' : 'none';
+    });
+
+    // WhatsApp lead form (no backend needed)
+    document.getElementById('leadForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = encodeURIComponent(document.getElementById('name').value.trim());
+      const phone = encodeURIComponent(document.getElementById('phone').value.trim());
+      const type = encodeURIComponent(document.getElementById('type').value.trim());
+      const msg  = encodeURIComponent(document.getElementById('msg').value.trim());
+
+      const text =
+        `שלום, אני ${decodeURIComponent(name)}.%0A` +
+        `טלפון: ${decodeURIComponent(phone)}%0A` +
+        (type ? `סוג פרויקט: ${decodeURIComponent(type)}%0A` : '') +
+        (msg ? `פרטים: ${decodeURIComponent(msg)}%0A` : '') +
+        `%0Aאשמח להצעת מחיר.`;
+
+      const url = `https://wa.me/972527004686?text=${text}`;
+      window.open(url, '_blank', 'noopener');
+    });
+  </script>
 </body>
 </html>
